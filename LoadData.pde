@@ -24,4 +24,5 @@ void LoadData(){
   XML[] QuestionsData = QuizXML.getChildren("Questions/Question");
   QuestionClasses = new QuestionClass[QuestionsData.length];
   println(QuestionsData.length);
+  Screen = "Quiz";
 }
