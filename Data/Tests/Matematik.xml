@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Data>
   <QuizName>Matematik</QuizName>
+  <Color/>
   <Questions>
 	<Question>
-	  <Titel></Titel>
-	  <Difficulty/>
-	  <Question></Question>
+	  <Title></Title>
+	  <Difficulty D="1"/>
+	  <Question>-2 = x - 4</Question>
 	  <A>
-		<Answer></Answer>
+		<Answer>x = 0</Answer>
 		<Correct>False</Correct>
 	  </A>
 	  <B>
-		<Answer></Answer>
+		<Answer>x = 3</Answer>
 		<Correct>False</Correct>
 	  </B>
 	  <C>
-		<Answer></Answer>
+		<Answer>x = 1</Answer>
 		<Correct>False</Correct>
 	  </C>
 	  <D>
-		<Answer></Answer>
+		<Answer>x = 2</Answer>
 		<Correct>True</Correct>
 	  </D>
 	</Question>
 	<Question>
-	  <Titel></Titel>
-	  <Difficulty/>
-	  <Question></Question>
+	  <Title></Title>
+	  <Difficulty D="1"/>
+	  <Question>Something</Question>
 	  <A>
-		<Answer></Answer>
-		<Correct>False</Correct>
+		<Answer>True</Answer>
+		<Correct>True</Correct>
 	  </A>
 	  <B>
-		<Answer></Answer>
+		<Answer>False</Answer>
 		<Correct>False</Correct>
 	  </B>
 	  <C>
-		<Answer></Answer>
+		<Answer>False</Answer>
 		<Correct>False</Correct>
 	  </C>
 	  <D>
-		<Answer></Answer>
+		<Answer>True</Answer>
 		<Correct>True</Correct>
 	  </D>
 	</Question>
