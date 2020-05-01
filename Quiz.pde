@@ -1,14 +1,16 @@
-float RowAmount = 8.0;
-
 //Selve quiz banneret på Main Menu
 class QuizClass{
   float RectX = width * 0.2;
-  float RectY = height * 0.3;
-  float RectXSize = width * 0.6;
-  float RectYSize = height * 0.05;
+  float RectYStart = height * 0.3;
+  float RectYUse;
+  float RectXSize = width * 0.18;
+  float RectYSize = height * 0.15;
   float WhiteSpace;
-  float NameTextSize;
-  String Name;
+  float NameTextSize = width / 80.0;
+  String FirstLine = "";
+  String SecondLine = "";
+  String ThirdLine = "";
+  
   boolean Moved = false;
   
   
@@ -17,17 +19,16 @@ class QuizClass{
     fill(360);
     strokeWeight(width / 300.0);
     stroke(0);
-    rect(RectX, RectY, RectXSize, RectYSize);
+    RectYUse = RectYStart - (MouseWheel * RectYSize * QuizMenuWhiteSpace / MouseWheelSpeed);
+    rect(RectX, RectYUse, RectXSize, RectYSize);
     
-    if (Quiz.length <= 24){
-      textSize(width / 60.0);
-    } else if (Quiz.length > 24 && Quiz.length <= 48){
-      textSize(width / 80.0);
-    } else if (Quiz.length > 48){
-      textSize(width / 120.0);
-    }
+    textSize(NameTextSize);
     fill(0);
-    text(Name, RectX, RectY, RectXSize, RectYSize);
+    textAlign(LEFT, CENTER);
+    text(FirstLine, RectX + width / 300.0, RectYUse, RectXSize, RectYSize / 3);
+    text(SecondLine, RectX + width / 300.0, RectYUse + RectYSize / 3, RectXSize - width / 600.0, RectYSize / 3);
+    text(ThirdLine, RectX + width / 300.0, RectYUse + RectYSize / 3 * 2, RectXSize - width / 600.0, RectYSize / 3);
+    textAlign(CENTER, CENTER);
   }
 }
 
@@ -35,12 +36,12 @@ class QuizClass{
 void QuizOptions(){
   for (int i = 0; i < Quiz.length; i++){
     if (QuizClasses[i].Moved == false){
-      QuizClasses[i].RectY += QuizClasses[i].RectYSize * 1.5 * (i - (floor(i / RowAmount) * RowAmount));
-      if (Quiz.length > RowAmount - 1){
-        QuizClasses[i].WhiteSpace = QuizClasses[i].RectXSize / (floor(Quiz.length / (RowAmount + 1.0)) * 10.0);
-        QuizClasses[i].RectXSize = QuizClasses[i].RectXSize / floor((Quiz.length - 1) / RowAmount + 1.0) - (QuizClasses[i].WhiteSpace * (floor(Quiz.length / RowAmount) / (floor(Quiz.length / RowAmount) + 1.0)));
+      QuizClasses[i].RectYStart += QuizClasses[i].RectYSize * QuizMenuWhiteSpace * floor(i / 3.0);
+      if (i / 3.0 - floor(i / 3) > 0.2 && i / 3.0 - floor(i / 3) < 0.4){
+        QuizClasses[i].RectX = width * 0.41;
+      }  else if (i / 3.0 - floor(i / 3) > 0.4 && i / 3.0 - floor(i / 3) < 0.8){
+        QuizClasses[i].RectX = width * 0.62;
       }
-      QuizClasses[i].RectX += floor(i / RowAmount) * (QuizClasses[i].RectXSize + (QuizClasses[i].WhiteSpace));
       QuizClasses[i].Moved = true;
     }
     QuizClasses[i].Display();
@@ -48,10 +49,6 @@ void QuizOptions(){
 }
 
 
-int TimerQuestion = 1;
-int QuestionNumber;
-float Score;
-int Combo = 0;
 
 class QuestionClass{
   String Name;
@@ -82,6 +79,7 @@ class QuestionClass{
   Boolean ClickD = false;
   
   void DisplayQuestion(){
+    stroke(0);
     fill(360);
     rect(width * 0.2, height * 0.15, width * 0.6, height * 0.2);
     fill(0);
@@ -106,9 +104,9 @@ class QuestionClass{
     text(floor(Score), width * 0.9, height * 0.15);
     
     TimerQuestion++;
-    //println(Combo);
+    
     if(ClickA == true || ClickB == true || ClickC == true || ClickD == true){
-      if(TimerBlink < 10){
+      if(TimerBlink > 9){
         if(ClickA == true){
           AColorHSB[0] = AnswerAColorHSB[0];
           AColorHSB[1] = AnswerAColorHSB[1];

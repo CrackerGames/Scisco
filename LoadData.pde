@@ -1,10 +1,3 @@
-File dir;
-File[] Quiz;
-String[] FileName;
-int TestAmount;
-int i;
-XML QuizXML;
-
 void LoadFiles(){
   dir = new File(sketchPath("Data/Tests"));
   Quiz = dir.listFiles();
@@ -13,9 +6,9 @@ void LoadFiles(){
   QuizClasses = new QuizClass[Quiz.length];
   for (int i = 0; i < Quiz.length; i++){
     QuizClasses[i] = new QuizClass();
-    QuizClasses[i].Name = Quiz[i].getName();
+    QuizClasses[i].FirstLine = Quiz[i].getName();
     FileName[i] = Quiz[i].getName();
-    QuizClasses[i].Name = QuizClasses[i].Name.replaceFirst(".xml","");
+    QuizClasses[i].FirstLine = QuizClasses[i].FirstLine.replaceFirst(".xml","");
   }
 }
 
