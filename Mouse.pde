@@ -2,8 +2,9 @@ void mousePressed(){
   if (Screen == "MainMenu"){
     for (int i = 0; i < Quiz.length; i++){
       if (mouseX >= QuizClasses[i].RectX && mouseY >= QuizClasses[i].RectYUse && mouseX <= QuizClasses[i].RectX + QuizClasses[i].RectXSize && mouseY <= QuizClasses[i].RectYUse + QuizClasses[i].RectYSize){
+        println(FileName[i]);
         QuizXML = loadXML(sketchPath("Data/Tests/") + FileName[i]);
-        LoadData();
+        LoadQuestionData();
       }
     }
     //Exit Button
@@ -64,7 +65,44 @@ void mousePressed(){
       WriteNewQuizName = true;
     } else {
       WriteNewQuizName = false;
-    }
+    } //NewQuizName
+    
+    if (mouseX >= FirstLineX && mouseY >=  FirstLineY && mouseX <= FirstLineX + FirstLineXSize && mouseY <=  FirstLineY + FirstLineYSize){
+      WriteFirstLine = true;
+    } else {
+      WriteFirstLine = false;
+    } //FirstLine
+    
+    if (mouseX >= SecondLineX && mouseY >=  SecondLineY && mouseX <= SecondLineX + SecondLineXSize && mouseY <=  SecondLineY + SecondLineYSize){
+      WriteSecondLine = true;
+    } else {
+      WriteSecondLine = false;
+    } //SecondLine
+    
+    if (mouseX >= ThirdLineX && mouseY >=  ThirdLineY && mouseX <= ThirdLineX + ThirdLineXSize && mouseY <=  ThirdLineY + ThirdLineYSize){
+      WriteThirdLine = true;
+    } else {
+      WriteThirdLine = false;
+    } //ThirdLine
+    
+    if (mouseX >= HColorX && mouseY >=  HColorY && mouseX <= HColorX + HColorXSize && mouseY <=  HColorY + HColorYSize){
+      WriteHColor = true;
+    } else {
+      WriteHColor = false;
+    } //HColor
+    
+    if (mouseX >= SColorX && mouseY >=  SColorY && mouseX <= SColorX + SColorXSize && mouseY <=  SColorY + SColorYSize){
+      WriteSColor = true;
+    } else {
+      WriteSColor = false;
+    } //SColor
+    
+    if (mouseX >= BColorX && mouseY >=  BColorY && mouseX <= BColorX + BColorXSize && mouseY <=  BColorY + BColorYSize){
+      WriteBColor = true;
+    } else {
+      WriteBColor = false;
+    } //BColor
+    
     if (mouseX >= SubmitX && mouseY >= SubmitY && mouseX <= SubmitX + SubmitXSize && mouseY <=  SubmitY + SubmitYSize){
       NewQuizSubmit = true;
     }

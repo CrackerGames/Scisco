@@ -7,16 +7,20 @@ class QuizClass{
   float RectYSize = height * 0.15;
   float WhiteSpace;
   float NameTextSize = width / 80.0;
+  String FileName;
   String FirstLine = "";
   String SecondLine = "";
   String ThirdLine = "";
+  int HColor = 200;
+  int SColor = 200;
+  int BColor = 200;
   
   boolean Moved = false;
   
   
   void Display(){
     colorMode(HSB, 360);
-    fill(360);
+    fill(HColor, SColor, BColor);
     strokeWeight(width / 300.0);
     stroke(0);
     RectYUse = RectYStart - (MouseWheel * RectYSize * QuizMenuWhiteSpace / MouseWheelSpeed);
@@ -47,8 +51,6 @@ void QuizOptions(){
     QuizClasses[i].Display();
   }
 }
-
-
 
 class QuestionClass{
   String Name;

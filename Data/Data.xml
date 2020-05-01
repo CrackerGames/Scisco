@@ -7,12 +7,12 @@
     <Adresse/>
   </LogIn>
   <QuizDataArray>
-	<QuizData>
-		<FileName></FileName>
-		<FirstLine></FirstLine>
-		<Color C="200"/>
-		<SecondLine></SecondLine>
-		<ThirdLine></ThirdLine>
-	</QuizData>
+    <QuizData>
+      <FileName>Matematik.xml</FileName>
+      <FirstLine>Fag: Matematik</FirstLine>
+      <SecondLine>Emne: Vektor</SecondLine>
+      <ThirdLine>IDK</ThirdLine>
+      <Color B="360" H="200" S="150"/>
+    </QuizData>
   </QuizDataArray>
 </Data>

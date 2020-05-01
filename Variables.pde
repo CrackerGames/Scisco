@@ -21,10 +21,45 @@
       SubmitXSize = width * 0.1;
       SubmitYSize = height * 0.05;
     //NewQuizName
-      NewQuizNameX = width * 0.3;
-      NewQuizNameY = height * 0.3;
-      NewQuizNameXSize = width * 0.4;
-      NewQuizNameYSize = height * 0.1;
+      NewQuizNameX = width * 0.35;
+      NewQuizNameY = height * 0.15;
+      NewQuizNameXSize = width * 0.3;
+      NewQuizNameYSize = height * 0.05;
+    //FirstLine
+      FirstLineX = width * 0.3;
+      FirstLineY = height * 0.25;
+      FirstLineXSize = width * 0.4;
+      FirstLineYSize = height * 0.08;
+    //SecondLine
+      SecondLineX = width * 0.3;
+      SecondLineY = height * 0.35;
+      SecondLineXSize = width * 0.4;
+      SecondLineYSize = height * 0.08;
+    //ThirdLine
+      ThirdLineX = width * 0.3;
+      ThirdLineY = height * 0.45;
+      ThirdLineXSize = width * 0.4;
+      ThirdLineYSize = height * 0.08;
+    //HColor
+      HColorX = width * 0.3;
+      HColorY = height * 0.55;
+      HColorXSize = width * 0.05;
+      HColorYSize = height * 0.04;
+    //SColor
+      SColorX = width * 0.475;
+      SColorY = height * 0.55;
+      SColorXSize = width * 0.05;
+      SColorYSize = height * 0.04;
+    //BColor
+      BColorX = width * 0.65;
+      BColorY = height * 0.55;
+      BColorXSize = width * 0.05;
+      BColorYSize = height * 0.04;
+    //ColorDisplay
+      ColorDisplayX = width * 0.3;
+      ColorDisplayY = height * 0.65;
+      ColorDisplayXSize = width * 0.4;
+      ColorDisplayYSize = height * 0.1;
   } //End of void
   //Exit
     float ExitX;
@@ -51,14 +86,51 @@
     float NewQuizNameY;
     float NewQuizNameXSize;
     float NewQuizNameYSize;
+  //FirstLine
+    float FirstLineX;
+    float FirstLineY;
+    float FirstLineXSize;
+    float FirstLineYSize;
+  //SecondLine
+    float SecondLineX;
+    float SecondLineY;
+    float SecondLineXSize;
+    float SecondLineYSize;
+  //ThirdLine
+    float ThirdLineX;
+    float ThirdLineY;
+    float ThirdLineXSize;
+    float ThirdLineYSize;
+  //HColor
+    float HColorX;
+    float HColorY;
+    float HColorXSize;
+    float HColorYSize;
+  //SColor
+    float SColorX;
+    float SColorY;
+    float SColorXSize;
+    float SColorYSize;
+  //BColor
+    float BColorX;
+    float BColorY;
+    float BColorXSize;
+    float BColorYSize;
+  //ColorDisplay
+    float ColorDisplayX;
+    float ColorDisplayY;
+    float ColorDisplayXSize;
+    float ColorDisplayYSize;
 
 
 //QuizData
-  String[] QuizName;
+  String[] QuizFileName;
   String[] QuizFirstLine;
   String[] QuizSecondLine;
   String[] QuizThirdLine;
-  float[] QuizColor;
+  int[] QuizHColor;
+  int[] QuizSColor;
+  int[] QuizBColor;
   
 
 
@@ -68,6 +140,9 @@
   int Combo = 0;
   int TestAmount;
   int NewQuizColorInt;
+  int HColorEx = 360;
+  int SColorEx = 360;
+  int BColorEx = 360;
 
 
 //float
@@ -85,10 +160,12 @@
   String[] FileName;
   //CreateQuiz
     String NewQuizName = "";
-    String NewQuizColorString = "";
     String NewQuizFirstLine = "";
     String NewQuizSecondLine = "";
     String NewQuizThirdLine = "";
+    String NewQuizHColorString = "360";
+    String NewQuizSColorString = "360";
+    String NewQuizBColorString = "360";
 
 
 //class
@@ -102,6 +179,13 @@
     boolean NewQuizSubmit = false;
     boolean ShowQuizNameError = false;
     boolean WriteNewQuizName = false;
+    boolean WriteFirstLine = false;
+    boolean WriteSecondLine = false;
+    boolean WriteThirdLine = false;
+    boolean WriteHColor = false;
+    boolean WriteSColor = false;
+    boolean WriteBColor = false;
+    boolean AddedQuiz = false;
 
 
 //XML
