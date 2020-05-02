@@ -39,6 +39,9 @@ void EditQuiz(){
     DeleteQuestion = false;
     saveXML(QuizXML, sketchPath("Data/Tests/") + EditQuiz);
     LoadQuestionData();
+    if (QuestionNumber + 1 > QuestionClasses.length){
+      QuestionNumber--;
+    }
   }
 }
 

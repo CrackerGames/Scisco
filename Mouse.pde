@@ -32,7 +32,6 @@ void mousePressed(){
         LoadFiles();
         MouseWheel = 0;
         QuestionNumber = 0;
-        Screen = "MainMenu";
       }
       //Settings Button
       if (mouseX >= SettingsX && mouseY >= SettingsY && mouseX <= SettingsX + SettingsXSize && mouseY <= SettingsY + SettingsYSize){
@@ -97,6 +96,7 @@ void mousePressed(){
       if (mouseX >= PlayX && mouseY >= PlayY && mouseX <= PlayX + PlayXSize && mouseY <= PlayY + PlayYSize){
         Score = 0;
         CurrectAmount = 0;
+        Combo = 0;
         Screen = "Quiz";
         QuestionNumber = 0;
       }
@@ -216,8 +216,10 @@ void mousePressed(){
           QuestionNumber--;
         }
       }
-      if (mouseX >= DeleteQuestionX && mouseY >= DeleteQuestionY && mouseX <= DeleteQuestionX + DeleteQuestionXSize && mouseY <= DeleteQuestionY + DeleteQuestionYSize){
-        SureDelete = true;
+      if (QuestionClasses.length > 1){
+        if (mouseX >= DeleteQuestionX && mouseY >= DeleteQuestionY && mouseX <= DeleteQuestionX + DeleteQuestionXSize && mouseY <= DeleteQuestionY + DeleteQuestionYSize){
+          SureDelete = true;
+        }
       }
     } else {
       if (mouseX >= DeleteBoxX && mouseY >= DeleteBoxY && mouseX <= DeleteBoxX + DeleteBoxXSize && mouseY <= DeleteBoxY + DeleteBoxYSize){

@@ -313,7 +313,6 @@ void AddedQuiz(){
   }
   for (int i = 0; i < Quiz.length; i++){
     if (CheckQuizExistance[i] == false){
-      println(QuizClasses[i].FileName);
       NewQuizName = QuizClasses[i].FileName;
       NewQuizName = NewQuizName.replace(".xml","");
     }

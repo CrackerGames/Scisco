@@ -58,8 +58,8 @@ void MainMenu(){
     fill(0);
     textSize(width / 80);
     text("Use score system", SettingsScoreX, SettingsScoreY - height * 0.003, SettingsScoreXSize, SettingsScoreYSize);
-    text("Use Difficulty in score", SettingsDifficultyX, SettingsDifficultyY - height * 0.003, SettingsDifficultyXSize, SettingsDifficultyYSize);
-    text("Use Combo in score", SettingsComboX, SettingsComboY - height * 0.003, SettingsComboXSize, SettingsComboYSize);
+    text("Use difficulty in score", SettingsDifficultyX, SettingsDifficultyY - height * 0.003, SettingsDifficultyXSize, SettingsDifficultyYSize);
+    text("Use combo in score", SettingsComboX, SettingsComboY - height * 0.003, SettingsComboXSize, SettingsComboYSize);
     text("Show if you're correct", SettingsShowCorrectX, SettingsShowCorrectY - height * 0.003, SettingsShowCorrectXSize, SettingsShowCorrectYSize);
   }
 }
