@@ -82,5 +82,7 @@ class QuizScrollbar {
     rect(BarXPos, BarYPos, BarWidth, BarHeight);
     fill(150);
     rect(BarXPos, RectYPos, BarWidth, RectHeight);
+    strokeWeight(StrokeWeight);
+    stroke(0);
   }
 }

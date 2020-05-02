@@ -146,9 +146,9 @@ void NewQuiz(){
       HColorEx = 360;
       SColorEx = 360;
       BColorEx = 360;
-      LoadFiles();
       Screen = "MainMenu";
       NewQuizSubmit = false;
+      LoadFiles();
     }
   }
 }
@@ -295,13 +295,23 @@ void EditQuizName(){
 void AddedQuiz(){
   XML QuizDataArray = Data.getChild("QuizDataArray");
   XML[] QuizData = QuizDataArray.getChildren("QuizData");
-  
-  for (int i = 0; i < Quiz.length; i++){
-    for (int j = 0; j < QuizData.length; j++){
-      if (!QuizClasses[i].FileName.equals(QuizFileName[j])){
-        NewQuizName = QuizClasses[i].FileName;
-        NewQuizName = NewQuizName.replace(".xml","");
+  boolean[] CheckQuizExistance;
+  CheckQuizExistance = new boolean[Quiz.length];
+  for (int i = 0; i < QuizData.length; i++){
+    CheckQuizExistance[i] = false;
+  }
+  for (int j = 0; j < QuizData.length; j++){
+    for (int i = 0; i < Quiz.length; i++){
+      if (QuizClasses[i].FileName.equals(QuizFileName[j])){
+        CheckQuizExistance[i] = true;
       }
+    }
+  }
+  for (int i = 0; i < Quiz.length; i++){
+    if (CheckQuizExistance[i] == false){
+      println(QuizClasses[i].FileName);
+      NewQuizName = QuizClasses[i].FileName;
+      NewQuizName = NewQuizName.replace(".xml","");
     }
   }
   NewQuiz();
