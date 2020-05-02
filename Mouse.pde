@@ -397,4 +397,35 @@ void mouseWheel (MouseEvent event){
       MouseWheel = MouseWheelMax;
     }
   }
+  if (Screen.equals("NewQuiz") || Screen.equals("AddedQuiz") || Screen.equals("EditQuizName")){
+    if (mouseX >= HColorX && mouseY >=  HColorY && mouseX <= HColorX + HColorXSize && mouseY <=  HColorY + HColorYSize){
+      HColorEx -= event.getCount();
+      if (HColorEx > 360){
+        HColorEx = 360;
+      } else if (HColorEx < 0){
+        HColorEx = 0;
+      }
+    NewQuizHColorString = str(HColorEx);
+    } //HColor
+    
+    if (mouseX >= SColorX && mouseY >=  SColorY && mouseX <= SColorX + SColorXSize && mouseY <=  SColorY + SColorYSize){
+      SColorEx -= event.getCount();
+      if (SColorEx > 360){
+        SColorEx = 360;
+      } else if (SColorEx < 0){
+        SColorEx = 0;
+      }
+      NewQuizSColorString = str(SColorEx);
+    } //SColor
+    
+    if (mouseX >= BColorX && mouseY >=  BColorY && mouseX <= BColorX + BColorXSize && mouseY <=  BColorY + BColorYSize){
+      BColorEx -= event.getCount();
+      if (BColorEx > 360){
+        BColorEx = 360;
+      } else if (BColorEx < 0){
+        BColorEx = 0;
+      }
+      NewQuizBColorString = str(BColorEx);
+    } //BColor
+  }
 }
