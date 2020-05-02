@@ -7,7 +7,7 @@ void PlayQuiz(){
     fill(0);
     textSize(width / 20);
     text(CurrectAmount + " Out Of " + QuestionClasses.length + " Correct", QuizDoneAmountCorrectX, QuizDoneAmountCorrectY);
-    if (ScoreActive == true && ShowCorrectActive == true){
+    if (ScoreActive == true){
       text(floor(Score) + " Points", QuizDoneScoreX, QuizDoneScoreY);
     }
     
