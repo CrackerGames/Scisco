@@ -1,6 +1,0 @@
-I Data.xml kan jeg have tema for hvordan banneret skal se ud, som:
-Farve, tema, navn, sværhedgrad, osv...
-
-for (int = i
-	for (int = j
-		test Data.name == Quiz.name
