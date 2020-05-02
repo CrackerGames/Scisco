@@ -223,6 +223,7 @@ void QuizSaveToData(){
 void EditQuizName(){
   XML QuizDataArray = Data.getChild("QuizDataArray");
   XML[] QuizData = QuizDataArray.getChildren("QuizData");
+  XML FileNameData;
   XML FirstLineData;
   XML SecondLineData;
   XML ThirdLineData;
@@ -234,7 +235,9 @@ void EditQuizName(){
     NewQuizName = NewQuizName.replace(".xml","");
     
     for (int i = 0; i < Quiz.length; i++){
-      if (QuizClasses[i].FileName.equals(EditQuiz)){
+      FileNameData = QuizData[i].getChild("FileName");
+      String FileNameXML = FileNameData.getContent();
+      if (FileNameXML.equals(EditQuiz)){
         FirstLineData = QuizData[i].getChild("FirstLine");
         SecondLineData = QuizData[i].getChild("SecondLine");
         ThirdLineData = QuizData[i].getChild("ThirdLine");
@@ -256,14 +259,16 @@ void EditQuizName(){
   NewQuiz();
   
   for (int i = 0; i < Quiz.length; i++){
-    if (QuizClasses[i].FileName.equals(EditQuiz)){
+    FileNameData = QuizData[i].getChild("FileName");
+    String FileNameXML = FileNameData.getContent();
+    if (FileNameXML.equals(EditQuiz)){
       FirstLineData = QuizData[i].getChild("FirstLine");
       SecondLineData = QuizData[i].getChild("SecondLine");
       ThirdLineData = QuizData[i].getChild("ThirdLine");
       ColorData = QuizData[i].getChild("Color");
       FirstLineData.setContent(NewQuizFirstLine);
-      ThirdLineData.setContent(NewQuizSecondLine);
-      SecondLineData.setContent(NewQuizThirdLine);
+      SecondLineData.setContent(NewQuizSecondLine);
+      ThirdLineData.setContent(NewQuizThirdLine);
       ColorData.setInt("H", HColorEx);
       ColorData.setInt("S", SColorEx);
       ColorData.setInt("B", BColorEx);
