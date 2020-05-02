@@ -21,8 +21,46 @@ void MainMenu(){
   textSize(width / 60.0);
   text("New", NewX, NewY - height * 0.003, NewXSize, NewYSize);
   
+  image(Reload, ReloadX, ReloadY, ReloadXSize, ReloadYSize);
+  image(Settings, SettingsX, SettingsY, SettingsXSize, SettingsYSize);
+  
   if (QuizClasses.length > QSM.BarHeight / (QuizClasses[0].RectYSize * QuizMenuWhiteSpace) * 3){
     QSM.Display();
+  }
+  if (SettingsActive == true){
+    fill(360);
+    rect(SettingsBoxX, SettingsBoxY, SettingsBoxXSize, SettingsBoxYSize);
+    if (ScoreActive == true){
+      fill(100, 360, 360);
+    } else {
+      fill(360, 360, 360);
+    }
+    rect(SettingsScoreX, SettingsScoreY, SettingsScoreXSize, SettingsScoreYSize);
+    if (DifficultyActive == true){
+      fill(100, 360, 360);
+    } else {
+      fill(360, 360, 360);
+    }
+    rect(SettingsDifficultyX, SettingsDifficultyY, SettingsDifficultyXSize, SettingsDifficultyYSize);
+    if (ComboActive == true){
+      fill(100, 360, 360);
+    } else {
+      fill(360, 360, 360);
+    }
+    rect(SettingsComboX, SettingsComboY, SettingsComboXSize, SettingsComboYSize);
+    if (ShowCorrectActive == true){
+      fill(100, 360, 360);
+    } else {
+      fill(360, 360, 360);
+    }
+    rect(SettingsShowCorrectX, SettingsShowCorrectY, SettingsShowCorrectXSize, SettingsShowCorrectYSize);
+    
+    fill(0);
+    textSize(width / 80);
+    text("Use score system", SettingsScoreX, SettingsScoreY - height * 0.003, SettingsScoreXSize, SettingsScoreYSize);
+    text("Use Difficulty in score", SettingsDifficultyX, SettingsDifficultyY - height * 0.003, SettingsDifficultyXSize, SettingsDifficultyYSize);
+    text("Use Combo in score", SettingsComboX, SettingsComboY - height * 0.003, SettingsComboXSize, SettingsComboYSize);
+    text("Show if you're correct", SettingsShowCorrectX, SettingsShowCorrectY - height * 0.003, SettingsShowCorrectXSize, SettingsShowCorrectYSize);
   }
 }
 

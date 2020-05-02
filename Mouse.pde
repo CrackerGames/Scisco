@@ -1,36 +1,102 @@
 void mousePressed(){
   if (Screen.equals("MainMenu")){
-    for (int i = 0; i < Quiz.length; i++){
-      if (mouseX >= QuizClasses[i].RectX && mouseY >= QuizClasses[i].RectYUse && mouseX <= QuizClasses[i].RectX + QuizClasses[i].RectXSize && mouseY <= QuizClasses[i].RectYUse + QuizClasses[i].RectYSize){
-        QuizXML = loadXML(sketchPath("Data/Tests/") + FileName[i]);
-        EditQuiz = FileName[i];
-        LoadQuestionData();
-        Screen = "PlayOrEdit";
+    if (SettingsActive == false){
+      for (int i = 0; i < Quiz.length; i++){
+        if (mouseX >= QuizClasses[i].RectX && mouseY >= QuizClasses[i].RectYUse && mouseX <= QuizClasses[i].RectX + QuizClasses[i].RectXSize && mouseY <= QuizClasses[i].RectYUse + QuizClasses[i].RectYSize){
+          QuizXML = loadXML(sketchPath("Data/Tests/") + FileName[i]);
+          EditQuiz = FileName[i];
+          LoadQuestionData();
+          Screen = "PlayOrEdit";
+        }
       }
-    }
-    //Exit Button
-    if (mouseX >= ExitX && mouseY >= ExitY && mouseX <= ExitX + ExitXSize && mouseY <= ExitY + ExitYSize){
-      exit();
-    }
-    //New Button
-    if (mouseX >= NewX && mouseY >= NewY && mouseX <= NewX + NewXSize && mouseY <= NewY + NewYSize){
-      Screen = "NewQuiz";
-      NewQuizName = "";
-      NewQuizFirstLine = "";
-      NewQuizSecondLine = "";
-      NewQuizThirdLine = "";
-      NewQuizHColorString = "";
-      NewQuizSColorString = "";
-      NewQuizBColorString = "";
-      HColorEx = 360;
-      SColorEx = 360;
-      BColorEx = 360;
+      //Exit Button
+      if (mouseX >= ExitX && mouseY >= ExitY && mouseX <= ExitX + ExitXSize && mouseY <= ExitY + ExitYSize){
+        exit();
+      }
+      //New Button
+      if (mouseX >= NewX && mouseY >= NewY && mouseX <= NewX + NewXSize && mouseY <= NewY + NewYSize){
+        Screen = "NewQuiz";
+        NewQuizName = "";
+        NewQuizFirstLine = "";
+        NewQuizSecondLine = "";
+        NewQuizThirdLine = "";
+        NewQuizHColorString = "";
+        NewQuizSColorString = "";
+        NewQuizBColorString = "";
+        HColorEx = 360;
+        SColorEx = 360;
+        BColorEx = 360;
+      }
+      //Reload Button
+      if (mouseX >= ReloadX && mouseY >= ReloadY && mouseX <= ReloadX + ReloadXSize && mouseY <= ReloadY + ReloadYSize){
+        LoadFiles();
+        MouseWheel = 0;
+        QuestionNumber = 0;
+        Screen = "MainMenu";
+      }
+      //Settings Button
+      if (mouseX >= SettingsX && mouseY >= SettingsY && mouseX <= SettingsX + SettingsXSize && mouseY <= SettingsY + SettingsYSize){
+        SettingsActive = true;
+      }
+    } else {
+      if (mouseX >= SettingsBoxX && mouseY >= SettingsBoxY && mouseX <= SettingsBoxX + SettingsBoxXSize && mouseY <= SettingsBoxY + SettingsBoxYSize){
+        XML SettingsData = Data.getChild("Settings");
+        XML ScoreActiveData = SettingsData.getChild("ScoreActive");
+        XML DifficultyActiveData = SettingsData.getChild("DifficultyActive");
+        XML ComboActiveData = SettingsData.getChild("ComboActive");
+        XML ShowCorrectActiveData = SettingsData.getChild("ShowCorrectActive");
+        if (mouseX >= SettingsScoreX && mouseY >= SettingsScoreY && mouseX <= SettingsScoreX + SettingsScoreXSize && mouseY <= SettingsScoreY + SettingsScoreYSize){
+          if (ScoreActive == true){
+            ScoreActive = false;
+            ScoreActiveData.setContent("False");
+          } else {
+            ScoreActive = true;
+            ScoreActiveData.setContent("True");
+          }
+        }
+        if (mouseX >= SettingsDifficultyX && mouseY >= SettingsDifficultyY && mouseX <= SettingsDifficultyX + SettingsDifficultyXSize && mouseY <= SettingsDifficultyY + SettingsDifficultyYSize){
+          if (DifficultyActive == true){
+            DifficultyActive = false;
+            ComboActive = true;
+            DifficultyActiveData.setContent("False");
+            ComboActiveData.setContent("True");
+          } else {
+            DifficultyActive = true;
+            DifficultyActiveData.setContent("True");
+          }
+        }
+        if (mouseX >= SettingsComboX && mouseY >= SettingsComboY && mouseX <= SettingsComboX + SettingsComboXSize && mouseY <= SettingsComboY + SettingsComboYSize){
+          if (ComboActive == true){
+            ComboActive = false;
+            DifficultyActive = true;
+            ComboActiveData.setContent("False");
+            DifficultyActiveData.setContent("True");
+          } else {
+            ComboActive = true;
+            ComboActiveData.setContent("True");
+          }
+        }
+        if (mouseX >= SettingsShowCorrectX && mouseY >= SettingsShowCorrectY && mouseX <= SettingsShowCorrectX + SettingsShowCorrectXSize && mouseY <= SettingsShowCorrectY + SettingsShowCorrectYSize){
+          if (ShowCorrectActive == true){
+            ShowCorrectActive = false;
+            ShowCorrectActiveData.setContent("False");
+          } else {
+            ShowCorrectActive = true;
+            ShowCorrectActiveData.setContent("True");
+          }
+        }
+        saveXML(Data, sketchPath("Data/Data.xml"));
+      } else {
+        SettingsActive = false;
+      }
     }
   } //MainMenu
   
   else if (Screen.equals("PlayOrEdit")){
     if (!SureDelete == true){
       if (mouseX >= PlayX && mouseY >= PlayY && mouseX <= PlayX + PlayXSize && mouseY <= PlayY + PlayYSize){
+        Score = 0;
+        CurrectAmount = 0;
         Screen = "Quiz";
         QuestionNumber = 0;
       }
@@ -174,7 +240,13 @@ void mousePressed(){
         if(QuestionClasses[QuestionNumber].ClickA == false && QuestionClasses[QuestionNumber].ClickB == false &&  QuestionClasses[QuestionNumber].ClickC == false && QuestionClasses[QuestionNumber].ClickD == false){
           QuestionClasses[QuestionNumber].ClickA = true;
           if(QuestionClasses[QuestionNumber].CorrectA.equals("True")){
-            Score += 10.0 * (1.0 + (0.1 * Combo) + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            if (DifficultyActive == true && ComboActive == true){
+              Score += 10.0 * (1.0 + (0.1 * Combo) + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            } else if (DifficultyActive == false) {
+              Score += 10.0 * (1.0 + (0.1 * Combo));
+            } else {
+              Score += 10.0 * (1.0 + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            }
             Combo++;
             CurrectAmount++;
           } else {
@@ -186,7 +258,13 @@ void mousePressed(){
         if(QuestionClasses[QuestionNumber].ClickA == false && QuestionClasses[QuestionNumber].ClickB == false &&  QuestionClasses[QuestionNumber].ClickC == false && QuestionClasses[QuestionNumber].ClickD == false){
           QuestionClasses[QuestionNumber].ClickB = true;
           if(QuestionClasses[QuestionNumber].CorrectB.equals("True")){
-            Score += 10.0 * (1.0 + (0.1 * Combo) + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            if (DifficultyActive == true && ComboActive == true){
+              Score += 10.0 * (1.0 + (0.1 * Combo) + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            } else if (DifficultyActive == false) {
+              Score += 10.0 * (1.0 + (0.1 * Combo));
+            } else {
+              Score += 10.0 * (1.0 + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            }
             Combo++;
             CurrectAmount++;
           } else {
@@ -198,7 +276,13 @@ void mousePressed(){
         if(QuestionClasses[QuestionNumber].ClickA == false && QuestionClasses[QuestionNumber].ClickB == false &&  QuestionClasses[QuestionNumber].ClickC == false && QuestionClasses[QuestionNumber].ClickD == false){
           QuestionClasses[QuestionNumber].ClickC = true;
           if(QuestionClasses[QuestionNumber].CorrectC.equals("True")){
-            Score += 10.0 * (1.0 + (0.1 * Combo) + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            if (DifficultyActive == true && ComboActive == true){
+              Score += 10.0 * (1.0 + (0.1 * Combo) + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            } else if (DifficultyActive == false) {
+              Score += 10.0 * (1.0 + (0.1 * Combo));
+            } else {
+              Score += 10.0 * (1.0 + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            }
             Combo++;
             CurrectAmount++;
           } else {
@@ -210,7 +294,13 @@ void mousePressed(){
         if(QuestionClasses[QuestionNumber].ClickA == false && QuestionClasses[QuestionNumber].ClickB == false &&  QuestionClasses[QuestionNumber].ClickC == false && QuestionClasses[QuestionNumber].ClickD == false){
           QuestionClasses[QuestionNumber].ClickD = true;
           if(QuestionClasses[QuestionNumber].CorrectD.equals("True")){
-            Score += 10.0 * (1.0 + (0.1 * Combo) + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            if (DifficultyActive == true && ComboActive == true){
+              Score += 10.0 * (1.0 + (0.1 * Combo) + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            } else if (DifficultyActive == false) {
+              Score += 10.0 * (1.0 + (0.1 * Combo));
+            } else {
+              Score += 10.0 * (1.0 + (0.1 * (QuestionClasses[QuestionNumber].Difficulty - 1)));
+            }
             Combo++;
             CurrectAmount++;
           } else {

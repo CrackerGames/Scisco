@@ -176,6 +176,41 @@
       QuizDoneMenuY = height * 0.7;
       QuizDoneMenuXSize = width * 0.2;
       QuizDoneMenuYSize = height * 0.1;
+    //Reload Button
+      ReloadX = width * 0.845;
+      ReloadY = height * 0.9;
+      ReloadXSize = width * 0.025;
+      ReloadYSize = width * 0.025;
+    //Settings Button
+      SettingsX = width * 0.815;
+      SettingsY = height * 0.9;
+      SettingsXSize = width * 0.025;
+      SettingsYSize = width * 0.025;
+    //Settings Box
+      SettingsBoxX = width * 0.6;
+      SettingsBoxY = height * 0.65;
+      SettingsBoxXSize = width * 0.3;
+      SettingsBoxYSize = height * 0.23;
+    //Settings Score
+      SettingsScoreX = width * 0.65;
+      SettingsScoreY = height * 0.67;
+      SettingsScoreXSize = width * 0.2;
+      SettingsScoreYSize = height * 0.04;
+    //Settings Difficulty
+      SettingsDifficultyX = width * 0.65;
+      SettingsDifficultyY = height * 0.72;
+      SettingsDifficultyXSize = width * 0.2;
+      SettingsDifficultyYSize = height * 0.04;
+    //Settings Combo
+      SettingsComboX = width * 0.65;
+      SettingsComboY = height * 0.77;
+      SettingsComboXSize = width * 0.2;
+      SettingsComboYSize = height * 0.04;
+    //Settings ShowCorrect
+      SettingsShowCorrectX = width * 0.65;
+      SettingsShowCorrectY = height * 0.82;
+      SettingsShowCorrectXSize = width * 0.2;
+      SettingsShowCorrectYSize = height * 0.04;
     
     StrokeWeight = width / 400;
   } //End of void
@@ -355,6 +390,41 @@
     float QuizDoneMenuY;
     float QuizDoneMenuXSize;
     float QuizDoneMenuYSize;
+  //Reload Button
+    float ReloadX;
+    float ReloadY;
+    float ReloadXSize;
+    float ReloadYSize;
+  //Settings Button
+    float SettingsX;
+    float SettingsY;
+    float SettingsXSize;
+    float SettingsYSize;
+  //Settings Box
+    float SettingsBoxX;
+    float SettingsBoxY;
+    float SettingsBoxXSize;
+    float SettingsBoxYSize;
+  //Settings Score
+    float SettingsScoreX;
+    float SettingsScoreY;
+    float SettingsScoreXSize;
+    float SettingsScoreYSize;
+  //Settings Difficulty
+    float SettingsDifficultyX;
+    float SettingsDifficultyY;
+    float SettingsDifficultyXSize;
+    float SettingsDifficultyYSize;
+  //Settings Combo
+    float SettingsComboX;
+    float SettingsComboY;
+    float SettingsComboXSize;
+    float SettingsComboYSize;
+  //Settings ShowCorrect
+    float SettingsShowCorrectX;
+    float SettingsShowCorrectY;
+    float SettingsShowCorrectXSize;
+    float SettingsShowCorrectYSize;
 
 
 //QuizData
@@ -445,6 +515,11 @@
     boolean SureDelete = false;
     boolean WriteDifficulty = false;
     boolean CorrectData = false;
+  boolean SettingsActive = false;
+  boolean ShowCorrectActive = true;
+  boolean ScoreActive = true;
+  boolean DifficultyActive = true;
+  boolean ComboActive = true;
 
 
 //XML

@@ -13,6 +13,34 @@ void LoadFiles(){
   QuizSColor = new int[QuizData.length];
   QuizBColor = new int[QuizData.length];
   
+  XML SettingsData = Data.getChild("Settings");
+  XML ScoreActiveData = SettingsData.getChild("ScoreActive");
+  XML DifficultyActiveData = SettingsData.getChild("DifficultyActive");
+  XML ComboActiveData = SettingsData.getChild("ComboActive");
+  XML ShowCorrectActiveData = SettingsData.getChild("ShowCorrectActive");
+  
+  if (ScoreActiveData.getContent().equals("True")){
+    ScoreActive = true;
+  } else {
+    ScoreActive = false;
+  }
+  if (DifficultyActiveData.getContent().equals("True")){
+    DifficultyActive = true;
+  } else {
+    DifficultyActive = false;
+  }
+  if (ComboActiveData.getContent().equals("True")){
+    ComboActive = true;
+  } else {
+    ComboActive = false;
+  }
+  if (ShowCorrectActiveData.getContent().equals("True")){
+    ShowCorrectActive = true;
+  } else {
+    ShowCorrectActive = false;
+  }
+  
+  
   for (int i = 0; i < Quiz.length; i++){      
     QuizClasses[i] = new QuizClass();
     QuizClasses[i].FileName = Quiz[i].getName();

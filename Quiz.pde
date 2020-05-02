@@ -125,46 +125,58 @@ class QuestionClass{
   
   void PlayQuestion(){
     textSize(width / 60);
-    text(floor(Score), width * 0.9, height * 0.15);
+    if (ScoreActive == true && ShowCorrectActive == true){
+      text(floor(Score), width * 0.9, height * 0.15);
+    }
     
     TimerQuestion++;
     
-    if(ClickA == true || ClickB == true || ClickC == true || ClickD == true){
-      if(TimerBlink > 9){
-        if(ClickA == true){
-          AColorHSB[0] = AnswerAColorHSB[0];
-          AColorHSB[1] = AnswerAColorHSB[1];
-        } else if(ClickB == true){
-          BColorHSB[0] = AnswerBColorHSB[0];
-          BColorHSB[1] = AnswerBColorHSB[1];
-        } else if(ClickC == true){
-          CColorHSB[0] = AnswerCColorHSB[0];
-          CColorHSB[1] = AnswerCColorHSB[1];
-        } else if(ClickD == true){
-          DColorHSB[0] = AnswerDColorHSB[0];
-          DColorHSB[1] = AnswerDColorHSB[1];
+    if (ShowCorrectActive == true){
+      if(ClickA == true || ClickB == true || ClickC == true || ClickD == true){
+        if(TimerBlink > 9){
+          if(ClickA == true){
+            AColorHSB[0] = AnswerAColorHSB[0];
+            AColorHSB[1] = AnswerAColorHSB[1];
+          } else if(ClickB == true){
+            BColorHSB[0] = AnswerBColorHSB[0];
+            BColorHSB[1] = AnswerBColorHSB[1];
+          } else if(ClickC == true){
+            CColorHSB[0] = AnswerCColorHSB[0];
+            CColorHSB[1] = AnswerCColorHSB[1];
+          } else if(ClickD == true){
+            DColorHSB[0] = AnswerDColorHSB[0];
+            DColorHSB[1] = AnswerDColorHSB[1];
+          }
+        } else {
+          if(ClickA == true){
+            AColorHSB[1] = 0;
+          } else if(ClickB == true){
+            BColorHSB[1] = 0;
+          } else if(ClickC == true){
+            CColorHSB[1] = 0;
+          } else if(ClickD == true){
+            DColorHSB[1] = 0;
+          }
         }
-      } else {
-        if(ClickA == true){
-          AColorHSB[1] = 0;
-        } else if(ClickB == true){
-          BColorHSB[1] = 0;
-        } else if(ClickC == true){
-          CColorHSB[1] = 0;
-        } else if(ClickD == true){
-          DColorHSB[1] = 0;
+        if(TimerBlink == 19){
+          TimerBlink = 0;
+        }
+        TimerNextQuestion++;
+        TimerBlink++;
+        
+        if(TimerNextQuestion == 119){
+          TimerBlink = 20;
+          TimerQuestion = 1;
+          QuestionNumber++;
         }
       }
-      if(TimerBlink == 19){
-        TimerBlink = 0;
-      }
-      TimerNextQuestion++;
-      TimerBlink++;
-      
-      if(TimerNextQuestion == 119){
-        TimerBlink = 20;
-        TimerQuestion = 1;
-        QuestionNumber++;
+    } else {
+      if(ClickA == true || ClickB == true || ClickC == true || ClickD == true){
+        TimerNextQuestion++;
+        if(TimerNextQuestion == 19){
+          TimerQuestion = 1;
+          QuestionNumber++;
+        }
       }
     }
   }

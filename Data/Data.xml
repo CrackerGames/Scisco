@@ -6,6 +6,12 @@
     <Email/>
     <Adresse/>
   </LogIn>
+  <Settings>
+    <ScoreActive>True</ScoreActive>
+    <DifficultyActive>True</DifficultyActive>
+    <ComboActive>True</ComboActive>
+    <ShowCorrectActive>True</ShowCorrectActive>
+  </Settings>
   <QuizDataArray>
     <QuizData>
       <FileName>Matematik.xml</FileName>

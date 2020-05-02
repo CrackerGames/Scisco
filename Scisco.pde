@@ -15,7 +15,6 @@ void draw(){
   background(360);
   
   if (!Screen.equals("MainMenu") && !Screen.equals("AddedQuiz") && QuestionNumber < QuestionClassesTem){
-    fill(360);
     image(Return, ReturnX, ReturnY, ReturnXSize, ReturnYSize);
   }
   if (Screen.equals("MainMenu")){
