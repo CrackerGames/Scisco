@@ -351,6 +351,11 @@ void mousePressed(){
       WriteHColor = false;
     } //HColor
     
+    if (mouseX >= HColorSelectX && mouseY >=  HColorSelectY && mouseX <= HColorSelectX + HColorSelectXSize && mouseY <=  HColorSelectY + HColorSelectYSize){
+      HColorEx = int(mouseY - HColorSelectY);
+      NewQuizHColorString = str(HColorEx);
+    } //HColorSelect
+    
     if (mouseX >= SColorX && mouseY >=  SColorY && mouseX <= SColorX + SColorXSize && mouseY <=  SColorY + SColorYSize){
       WriteSColor = true;
     } else {

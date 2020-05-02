@@ -45,6 +45,11 @@
       HColorY = height * 0.55;
       HColorXSize = width * 0.05;
       HColorYSize = height * 0.04;
+    //HColorSelect
+      HColorSelectXSize = width * 0.05;
+      HColorSelectYSize = 360 * height / 1080;
+      HColorSelectX = width * 0.2;
+      HColorSelectY = height * 0.55 - HColorSelectYSize / 2;
     //SColor
       SColorX = width * 0.475;
       SColorY = height * 0.55;
@@ -259,6 +264,11 @@
     float HColorY;
     float HColorXSize;
     float HColorYSize;
+  //HColorSelect
+    float HColorSelectX;
+    float HColorSelectY;
+    float HColorSelectXSize;
+    float HColorSelectYSize;
   //SColor
     float SColorX;
     float SColorY;

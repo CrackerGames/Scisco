@@ -25,6 +25,10 @@ void NewQuiz(){
   if (WriteHColor == true){
     fill(300);
   }
+  
+  rect(HColorSelectX - height * 0.001, HColorSelectY - height * 0.001, HColorSelectXSize + height * 0.002, HColorSelectYSize + height * 0.002);
+  image(ColorSelect, HColorSelectX, HColorSelectY, HColorSelectXSize, HColorSelectYSize);
+  
   rect(HColorX, HColorY, HColorXSize, HColorYSize);
   fill(360);
   if (WriteSColor == true){
