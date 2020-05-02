@@ -1,48 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Data>
   <QuizName>Matematik</QuizName>
+  <Color/>
   <Questions>
-	<Question>
-	  <Title></Title>
-	  <Difficulty D="1"/>
-	  <Question>-2 = x - 4</Question>
-	  <A>
-		<Answer>x = 0</Answer>
-		<Correct>False</Correct>
-	  </A>
-	  <B>
-		<Answer>x = 3</Answer>
-		<Correct>False</Correct>
-	  </B>
-	  <C>
-		<Answer>x = 1</Answer>
-		<Correct>False</Correct>
-	  </C>
-	  <D>
-		<Answer>x = 2</Answer>
-		<Correct>True</Correct>
-	  </D>
-	</Question>
-	<Question>
-	  <Title></Title>
-	  <Difficulty D="1"/>
-	  <Question>Something</Question>
-	  <A>
-		<Answer>True</Answer>
-		<Correct>True</Correct>
-	  </A>
-	  <B>
-		<Answer>False</Answer>
-		<Correct>False</Correct>
-	  </B>
-	  <C>
-		<Answer>False</Answer>
-		<Correct>False</Correct>
-	  </C>
-	  <D>
-		<Answer>True</Answer>
-		<Correct>True</Correct>
-	  </D>
-	</Question>
+    <Question>
+      <Title/>
+      <Difficulty D="3"/>
+      <Question>-2 = x - 4</Question>
+      <A>
+        <Answer>x = 0</Answer>
+        <Correct>False</Correct>
+      </A>
+      <B>
+        <Answer>x = 3</Answer>
+        <Correct>False</Correct>
+      </B>
+      <C>
+        <Answer>x = 1</Answer>
+        <Correct>False</Correct>
+      </C>
+      <D>
+        <Answer>x = 2</Answer>
+        <Correct>True</Correct>
+      </D>
+    </Question>
+    <Question>
+      <Title/>
+      <Difficulty D="1"/>
+      <Question>Something</Question>
+      <A>
+        <Answer>True</Answer>
+        <Correct>True</Correct>
+      </A>
+      <B>
+        <Answer>False</Answer>
+        <Correct>False</Correct>
+      </B>
+      <C>
+        <Answer>False</Answer>
+        <Correct>False</Correct>
+      </C>
+      <D>
+        <Answer>True</Answer>
+        <Correct>True</Correct>
+      </D>
+    </Question>
   </Questions>
 </Data>

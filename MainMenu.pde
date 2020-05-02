@@ -1,5 +1,5 @@
 void MainMenu(){
-  strokeWeight(width / 300.0);
+  strokeWeight(StrokeWeight);
   QSM = new QuizScrollbar();
   //Banner
   QuizOptions();
@@ -8,7 +8,7 @@ void MainMenu(){
   rect(0, 0, width, QSM.BarYPos);
   rect(0, QSM.BarYPos + QSM.BarHeight, width, height);
   fill(0);
-  textSize(TextSize);
+  textSize(width / 20);
   text("Scisco", width / 2.0, height / 7.0);
   //Exit Button
   fill(1,360,360);

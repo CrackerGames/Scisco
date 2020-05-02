@@ -42,14 +42,58 @@ void NewQuiz(){
   fill(0);
   textSize(width / 60.0);
   text("Submit", SubmitX, SubmitY, SubmitXSize, SubmitYSize);
-  text(NewQuizName, NewQuizNameX, NewQuizNameY, NewQuizNameXSize, NewQuizNameYSize);
-  text(NewQuizFirstLine, FirstLineX, FirstLineY, FirstLineXSize, FirstLineYSize);
-  text(NewQuizSecondLine, SecondLineX, SecondLineY, SecondLineXSize, SecondLineYSize);
-  text(NewQuizThirdLine, ThirdLineX, ThirdLineY, ThirdLineXSize, ThirdLineYSize);
-  text(NewQuizHColorString, HColorX, HColorY, HColorXSize, HColorYSize);
-  text(NewQuizSColorString, SColorX, SColorY, SColorXSize, SColorYSize);
-  text(NewQuizBColorString, BColorX, BColorY, BColorXSize, BColorYSize);
-  
+  if (WriteNewQuizName == true || !NewQuizName.equals("")){
+    text(NewQuizName, NewQuizNameX, NewQuizNameY - height * 0.003, NewQuizNameXSize, NewQuizNameYSize);
+  } else {
+    fill(100);
+    text(NewQuizNameTem, NewQuizNameX, NewQuizNameY - height * 0.003, NewQuizNameXSize, NewQuizNameYSize);
+    fill(0);
+  }
+  if (WriteFirstLine == true || !NewQuizFirstLine.equals("")){
+    text(NewQuizFirstLine, FirstLineX, FirstLineY - height * 0.003, FirstLineXSize, FirstLineYSize);
+  } else {
+    fill(100);
+    text(NewQuizFirstLineTem, FirstLineX, FirstLineY - height * 0.003, FirstLineXSize, FirstLineYSize);
+    fill(0);
+  }
+  if (WriteSecondLine == true || !NewQuizSecondLine.equals("")){
+    text(NewQuizSecondLine, SecondLineX, SecondLineY - height * 0.003, SecondLineXSize, SecondLineYSize);
+  } else {
+    fill(100);
+    text(NewQuizSecondLineTem, SecondLineX, SecondLineY - height * 0.003, SecondLineXSize, SecondLineYSize);
+    fill(0);
+  }
+  if (WriteThirdLine == true || !NewQuizThirdLine.equals("")){
+    text(NewQuizThirdLine, ThirdLineX, ThirdLineY - height * 0.003, ThirdLineXSize, ThirdLineYSize);
+  } else {
+    fill(100);
+    text(NewQuizThirdLineTem, ThirdLineX, ThirdLineY - height * 0.003, ThirdLineXSize, ThirdLineYSize);
+    fill(0);
+  }
+  if (WriteHColor == true || !NewQuizHColorString.equals("")){
+    text(NewQuizHColorString, HColorX, HColorY - height * 0.003, HColorXSize, HColorYSize);
+  } else {
+    fill(100);
+    text(NewQuizSColorStringTem, HColorX, HColorY - height * 0.003, HColorXSize, HColorYSize);
+    fill(0);
+  }
+  text("Hue", HColorX + HColorXSize / 2, HColorY - height * 0.003 + HColorYSize * 1.5);
+  if (WriteSColor == true || !NewQuizSColorString.equals("")){
+    text(NewQuizSColorString, SColorX, SColorY - height * 0.003, SColorXSize, SColorYSize);
+  } else {
+    fill(100);
+    text(NewQuizSColorStringTem, SColorX, SColorY - height * 0.003, SColorXSize, SColorYSize);
+    fill(0);
+  }
+  text("Saturation", SColorX + SColorXSize / 2, SColorY - height * 0.003 + SColorYSize * 1.5);
+  if (WriteBColor == true || !NewQuizBColorString.equals("")){
+    text(NewQuizBColorString, BColorX, BColorY - height * 0.003, BColorXSize, BColorYSize);
+  } else {
+    fill(100);
+    text(NewQuizBColorStringTem, BColorX, BColorY - height * 0.003, BColorXSize, BColorYSize);
+    fill(0);
+  }
+  text("Brightness", BColorX + BColorXSize / 2, BColorY - height * 0.003 + BColorYSize * 1.5);
   
   if (ShowQuizNameError == true){
     fill(360, 360, 360);
@@ -57,25 +101,52 @@ void NewQuiz(){
   }
   if (NewQuizSubmit == true){
     XML[] QuizData = Data.getChildren("QuizDataArray/QuizData");
+    LoadFiles();
+    boolean NameCheck = false;
     String NewQuizNameCheck = NewQuizName + ".xml";
     for (int i = 0; i < QuizData.length; i++){
-      if (!NewQuizName.equals("") && !NewQuizName.equals(" ") && !NewQuizName.equals("  ") && !NewQuizName.equals("   ") && !NewQuizNameCheck.equals(QuizFileName[i])){
-        if (!Screen.equals(AddedQuiz)){
-          WriteQuizFile = createWriter("Data/Tests/" + NewQuizName + ".xml");
-          QuizFileTemplate();
-          QuizNewQuestion();
-          QuizSaveToData();
-          NewQuizName = "";
-          Screen = "EditQuiz";
-        } else {
-          QuizSaveToData();
-          NewQuizName = "";
-          Screen = "MainMenu";
-          LoadFiles();
-        }
+      if (NewQuizNameCheck.equals(FileName[i])){
+        NameCheck = true;
+      }
+    }
+    if (!Screen.equals("AddedQuiz") && !Screen.equals("EditQuizName")){
+      if (!NewQuizName.equals("") && !NewQuizName.equals(" ") && !NewQuizName.equals("  ") && !NewQuizName.equals("   ") && NameCheck == false){
+        WriteQuizFile = createWriter("Data/Tests/" + NewQuizName + ".xml");
+        QuizFileTemplate();
+        QuizNewQuestion();
+        QuizSaveToData();
+        EditQuiz = NewQuizName + ".xml";
+        NewQuizName = "";
+        NewQuizFirstLine = "";
+        NewQuizSecondLine = "";
+        NewQuizThirdLine = "";
+        NewQuizHColorString = "";
+        NewQuizSColorString = "";
+        NewQuizBColorString = "";
+        HColorEx = 360;
+        SColorEx = 360;
+        BColorEx = 360;
+        LoadFiles();
+        LoadQuestionData();
+        Screen = "EditQuiz";
+        NewQuizSubmit = false;
       } else {
         ShowQuizNameError = true;
       }
+    } else if (!Screen.equals("EditQuizName")){
+      QuizSaveToData();
+      NewQuizName = "";
+      NewQuizFirstLine = "";
+      NewQuizSecondLine = "";
+      NewQuizThirdLine = "";
+      NewQuizHColorString = "";
+      NewQuizSColorString = "";
+      NewQuizBColorString = "";
+      HColorEx = 360;
+      SColorEx = 360;
+      BColorEx = 360;
+      LoadFiles();
+      Screen = "MainMenu";
       NewQuizSubmit = false;
     }
   }
@@ -95,7 +166,11 @@ void QuizFileTemplate(){
 }
 
 void QuizNewQuestion(){
-  QuizXML = loadXML(sketchPath("Data/Tests/") + NewQuizName + ".xml");
+  if (!NewQuizName.equals("")){
+    QuizXML = loadXML(sketchPath("Data/Tests/") + NewQuizName + ".xml");
+  } else {
+    QuizXML = loadXML(sketchPath("Data/Tests/") + EditQuiz);
+  }
   XML Questions = QuizXML.getChild("Questions");
   XML Question = Questions.addChild("Question");
   Question.addChild("Title");
@@ -118,7 +193,12 @@ void QuizNewQuestion(){
   D.addChild("Answer");
   XML DCorrect = D.addChild("Correct");
   DCorrect.setContent("False");
-  saveXML(QuizXML, sketchPath("Data/Tests/") + NewQuizName + ".xml");
+  if (!NewQuizName.equals("")){
+    saveXML(QuizXML, sketchPath("Data/Tests/") + NewQuizName + ".xml");
+  } else {
+    saveXML(QuizXML, sketchPath("Data/Tests/") + EditQuiz);
+  }
+  
 }
 
 void QuizSaveToData(){
@@ -140,6 +220,71 @@ void QuizSaveToData(){
   
   saveXML(Data, sketchPath("Data/Data.xml"));
 }
+void EditQuizName(){
+  XML QuizDataArray = Data.getChild("QuizDataArray");
+  XML[] QuizData = QuizDataArray.getChildren("QuizData");
+  XML FirstLineData;
+  XML SecondLineData;
+  XML ThirdLineData;
+  XML ColorData;
+  
+  if (CorrectData == true){
+    
+    NewQuizName = EditQuiz;
+    NewQuizName = NewQuizName.replace(".xml","");
+    
+    for (int i = 0; i < Quiz.length; i++){
+      if (QuizClasses[i].FileName.equals(EditQuiz)){
+        FirstLineData = QuizData[i].getChild("FirstLine");
+        SecondLineData = QuizData[i].getChild("SecondLine");
+        ThirdLineData = QuizData[i].getChild("ThirdLine");
+        ColorData = QuizData[i].getChild("Color");
+        
+        NewQuizFirstLine = FirstLineData.getContent();
+        NewQuizSecondLine = SecondLineData.getContent();
+        NewQuizThirdLine = ThirdLineData.getContent();
+        HColorEx = ColorData.getInt("H");
+        SColorEx = ColorData.getInt("S");
+        BColorEx = ColorData.getInt("B");
+        NewQuizHColorString = str(HColorEx);
+        NewQuizSColorString = str(SColorEx);
+        NewQuizBColorString = str(BColorEx);
+      }
+    }
+    CorrectData = false;
+  }
+  NewQuiz();
+  
+  for (int i = 0; i < Quiz.length; i++){
+    if (QuizClasses[i].FileName.equals(EditQuiz)){
+      FirstLineData = QuizData[i].getChild("FirstLine");
+      SecondLineData = QuizData[i].getChild("SecondLine");
+      ThirdLineData = QuizData[i].getChild("ThirdLine");
+      ColorData = QuizData[i].getChild("Color");
+      FirstLineData.setContent(NewQuizFirstLine);
+      ThirdLineData.setContent(NewQuizSecondLine);
+      SecondLineData.setContent(NewQuizThirdLine);
+      ColorData.setInt("H", HColorEx);
+      ColorData.setInt("S", SColorEx);
+      ColorData.setInt("B", BColorEx);
+      saveXML(Data, sketchPath("Data/Data.xml"));
+    }
+  }
+  if (NewQuizSubmit == true){
+    NewQuizSubmit = false;
+    Screen = "MainMenu";
+    NewQuizName = "";
+    NewQuizFirstLine = "";
+    NewQuizSecondLine = "";
+    NewQuizThirdLine = "";
+    NewQuizHColorString = "";
+    NewQuizSColorString = "";
+    NewQuizBColorString = "";
+    HColorEx = 360;
+    SColorEx = 360;
+    BColorEx = 360;
+  }
+}
 
 void AddedQuiz(){
   XML QuizDataArray = Data.getChild("QuizDataArray");
@@ -149,6 +294,7 @@ void AddedQuiz(){
     for (int j = 0; j < QuizData.length; j++){
       if (!QuizClasses[i].FileName.equals(QuizFileName[j])){
         NewQuizName = QuizClasses[i].FileName;
+        NewQuizName = NewQuizName.replace(".xml","");
       }
     }
   }

@@ -109,6 +109,5 @@ void LoadQuestionData(){
       QuestionClasses[i].AnswerDColorHSB[0] = 100;
     }
   }
-  println(QuestionsData.length);
-  Screen = "Quiz";
+  QuestionClassesTem = QuestionClasses.length;
 }

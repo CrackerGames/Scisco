@@ -1,34 +1,36 @@
 void setup(){
   Data = loadXML(sketchPath("Data/") + "Data.xml");
-  LoadFiles();
   colorMode(HSB, 360);
   background(360);
   fullScreen();
+  CallibrateVariables();
   frameRate(60);
   textAlign(CENTER, CENTER);
-  TextSize = width / 20.0;
+  strokeWeight(StrokeWeight);
   Images();
-  Button();
+  LoadFiles();
 }
 
 void draw(){
   background(360);
   
-  if (!Screen.equals("MainMenu") && !Screen.equals("AddedQuiz")){
+  if (!Screen.equals("MainMenu") && !Screen.equals("AddedQuiz") && QuestionNumber < QuestionClassesTem){
     fill(360);
     image(Return, ReturnX, ReturnY, ReturnXSize, ReturnYSize);
   }
   if (Screen.equals("MainMenu")){
     MainMenu();
   } else if (Screen.equals("Quiz")){
-    if (QuestionNumber < QuestionClasses.length){
-      QuestionClasses[QuestionNumber].DisplayQuestion();
-    }
+    PlayQuiz();
   } else if (Screen.equals("NewQuiz")){
     NewQuiz();
+  } else if (Screen.equals("PlayOrEdit")){
+    PlayOrEdit();
   } else if (Screen.equals("EditQuiz")){
     EditQuiz();
   } else if (Screen.equals("AddedQuiz")){
     AddedQuiz();
+  } else if (Screen.equals("EditQuizName")){
+    EditQuizName();
   }
 }

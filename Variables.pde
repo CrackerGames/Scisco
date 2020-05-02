@@ -1,5 +1,5 @@
-//Buttons
-  void Button(){
+//CallibrateVariables (Mostly Buttons)
+  void CallibrateVariables(){
     //Exit
       ExitX = width * 0.94;
       ExitY = height * 0.9;
@@ -60,6 +60,124 @@
       ColorDisplayY = height * 0.65;
       ColorDisplayXSize = width * 0.4;
       ColorDisplayYSize = height * 0.1;
+    //QuestionQuestion
+      QuestionQuestionX = width * 0.2;
+      QuestionQuestionY = height * 0.15;
+      QuestionQuestionXSize = width * 0.6;
+      QuestionQuestionYSize = height * 0.2;
+    //QuestionAnswerA
+      QuestionAnswerAX = width * 0.2;
+      QuestionAnswerAY = height * 0.45;
+      QuestionAnswerAXSize = width * 0.275;
+      QuestionAnswerAYSize = height * 0.2;
+    //QuestionAnswerACorrect
+      QuestionAnswerACorrectX = width * 0.15;
+      QuestionAnswerACorrectY = height * 0.55 - width * 0.03 / 2;
+      QuestionAnswerACorrectXSize = width * 0.03;
+      QuestionAnswerACorrectYSize = width * 0.03;
+    //QuestionAnswerB
+      QuestionAnswerBX = width * 0.525;
+      QuestionAnswerBY = height * 0.45;
+      QuestionAnswerBXSize = width * 0.275;
+      QuestionAnswerBYSize = height * 0.2;
+    //QuestionAnswerBCorrect
+      QuestionAnswerBCorrectX = width * 0.82;
+      QuestionAnswerBCorrectY = height * 0.55 - width * 0.03 / 2;
+      QuestionAnswerBCorrectXSize = width * 0.03;
+      QuestionAnswerBCorrectYSize = width * 0.03;
+    //QuestionAnswerC
+      QuestionAnswerCX = width * 0.2;
+      QuestionAnswerCY = height * 0.7;
+      QuestionAnswerCXSize = width * 0.275;
+      QuestionAnswerCYSize = height * 0.2;
+    //QuestionAnswerCCorrect
+      QuestionAnswerCCorrectX = width * 0.15;
+      QuestionAnswerCCorrectY = height * 0.8 - width * 0.03 / 2;
+      QuestionAnswerCCorrectXSize = width * 0.03;
+      QuestionAnswerCCorrectYSize = width * 0.03;
+    //QuestionAnswerD
+      QuestionAnswerDX = width * 0.525;
+      QuestionAnswerDY = height * 0.7;
+      QuestionAnswerDXSize = width * 0.275;
+      QuestionAnswerDYSize = height * 0.2;
+    //QuestionAnswerDCorrect
+      QuestionAnswerDCorrectX = width * 0.82;
+      QuestionAnswerDCorrectY = height * 0.8 - width * 0.03 / 2;
+      QuestionAnswerDCorrectXSize = width * 0.03;
+      QuestionAnswerDCorrectYSize = width * 0.03;
+    //Play
+      PlayX = width * 0.2;
+      PlayY = height * 0.2;
+      PlayXSize = width * 0.6;
+      PlayYSize = height * 0.2;
+    //Edit Quiz
+      EditQuizX = width * 0.2;
+      EditQuizY = height * 0.45;
+      EditQuizXSize = width * 0.28;
+      EditQuizYSize = height * 0.2;
+    //Edit Name
+      EditNameX = width * 0.52;
+      EditNameY = height * 0.45;
+      EditNameXSize = width * 0.28;
+      EditNameYSize = height * 0.2;
+    //Next/New Question
+      NextX = width * 0.88;
+      NextY = height * 0.9;
+      NextXSize = width * 0.045;
+      NextYSize = width * 0.025;
+    //Previous Question
+      PreviousX = width * 0.82;
+      PreviousY = height * 0.9;
+      PreviousXSize = width * 0.045;
+      PreviousYSize = width * 0.025;
+    //Difficulty
+      DifficultyX = width * 0.8775;
+      DifficultyY = height * 0.135;
+      DifficultyXSize = width * 0.045;
+      DifficultyYSize = width * 0.025;
+    //Delete Question
+      DeleteQuestionX = width * 0.05;
+      DeleteQuestionY = height * 0.9;
+      DeleteQuestionXSize = width * 0.06;
+      DeleteQuestionYSize = width * 0.025;
+    //Delete Quiz
+      DeleteQuizX = width * 0.2;
+      DeleteQuizY = height * 0.7;
+      DeleteQuizXSize = width * 0.6;
+      DeleteQuizYSize = width * 0.1;
+    //Delete Question Box
+      DeleteBoxX = width * 0.3;
+      DeleteBoxY = height * 0.3;
+      DeleteBoxXSize = width * 0.4;
+      DeleteBoxYSize = height * 0.4;
+    //Delete Question Box Yes
+      DeleteBoxYesX = width * 0.4;
+      DeleteBoxYesY = height * 0.6;
+      DeleteBoxYesXSize = width * 0.06;
+      DeleteBoxYesYSize = width * 0.025;
+    //Delete Question Box No
+      DeleteBoxNoX = width * 0.54;
+      DeleteBoxNoY = height * 0.6;
+      DeleteBoxNoXSize = width * 0.06;
+      DeleteBoxNoYSize = width * 0.025;
+    //Delete Question Box Ok
+      DeleteBoxOkX = width * 0.47;
+      DeleteBoxOkY = height * 0.6;
+      DeleteBoxOkXSize = width * 0.06;
+      DeleteBoxOkYSize = width * 0.025;
+    //Quiz Done Amount Correct
+      QuizDoneAmountCorrectX = width * 0.5;
+      QuizDoneAmountCorrectY = height * 0.3;
+    //Quiz Done Score
+      QuizDoneScoreX = width * 0.5;
+      QuizDoneScoreY = height * 0.5;
+    //Quiz Done Menu
+      QuizDoneMenuX = width * 0.4;
+      QuizDoneMenuY = height * 0.7;
+      QuizDoneMenuXSize = width * 0.2;
+      QuizDoneMenuYSize = height * 0.1;
+    
+    StrokeWeight = width / 400;
   } //End of void
   //Exit
     float ExitX;
@@ -121,6 +239,122 @@
     float ColorDisplayY;
     float ColorDisplayXSize;
     float ColorDisplayYSize;
+  //QuestionQuestion
+    float QuestionQuestionX;
+    float QuestionQuestionY;
+    float QuestionQuestionXSize;
+    float QuestionQuestionYSize;
+  //QuestionAnswerA
+    float QuestionAnswerAX;
+    float QuestionAnswerAY;
+    float QuestionAnswerAXSize;
+    float QuestionAnswerAYSize;
+  //QuestionAnswerACorrect
+    float QuestionAnswerACorrectX;
+    float QuestionAnswerACorrectY;
+    float QuestionAnswerACorrectXSize;
+    float QuestionAnswerACorrectYSize;
+  //QuestionAnswerB
+    float QuestionAnswerBX;
+    float QuestionAnswerBY;
+    float QuestionAnswerBXSize;
+    float QuestionAnswerBYSize;
+  //QuestionAnswerBCorrect
+    float QuestionAnswerBCorrectX;
+    float QuestionAnswerBCorrectY;
+    float QuestionAnswerBCorrectXSize;
+    float QuestionAnswerBCorrectYSize;
+  //QuestionAnswerC
+    float QuestionAnswerCX;
+    float QuestionAnswerCY;
+    float QuestionAnswerCXSize;
+    float QuestionAnswerCYSize;
+  //QuestionAnswerCCorrect
+    float QuestionAnswerCCorrectX;
+    float QuestionAnswerCCorrectY;
+    float QuestionAnswerCCorrectXSize;
+    float QuestionAnswerCCorrectYSize;
+  //QuestionAnswerD
+    float QuestionAnswerDX;
+    float QuestionAnswerDY;
+    float QuestionAnswerDXSize;
+    float QuestionAnswerDYSize;
+  //QuestionAnswerDCorrect
+    float QuestionAnswerDCorrectX;
+    float QuestionAnswerDCorrectY;
+    float QuestionAnswerDCorrectXSize;
+    float QuestionAnswerDCorrectYSize;
+  //Play
+    float PlayX;
+    float PlayY;
+    float PlayXSize;
+    float PlayYSize;
+  //Edit Quiz
+    float EditQuizX;
+    float EditQuizY;
+    float EditQuizXSize;
+    float EditQuizYSize;
+  //Edit Name
+    float EditNameX;
+    float EditNameY;
+    float EditNameXSize;
+    float EditNameYSize;
+  //Next/New Question
+    float NextX;
+    float NextY;
+    float NextXSize;
+    float NextYSize;
+  //Previous Question
+    float PreviousX;
+    float PreviousY;
+    float PreviousXSize;
+    float PreviousYSize;
+  //Difficulty
+    float DifficultyX;
+    float DifficultyY;
+    float DifficultyXSize;
+    float DifficultyYSize;
+  //Delete Question
+    float DeleteQuestionX;
+    float DeleteQuestionY;
+    float DeleteQuestionXSize;
+    float DeleteQuestionYSize;
+  //Delete Quiz
+    float DeleteQuizX;
+    float DeleteQuizY;
+    float DeleteQuizXSize;
+    float DeleteQuizYSize;
+  //Delete Question Box
+    float DeleteBoxX;
+    float DeleteBoxY;
+    float DeleteBoxXSize;
+    float DeleteBoxYSize;
+  //Delete Question Box Yes
+    float DeleteBoxYesX;
+    float DeleteBoxYesY;
+    float DeleteBoxYesXSize;
+    float DeleteBoxYesYSize;
+  //Delete Question Box No
+    float DeleteBoxNoX;
+    float DeleteBoxNoY;
+    float DeleteBoxNoXSize;
+    float DeleteBoxNoYSize;
+  //Delete Question Box Ok
+    float DeleteBoxOkX;
+    float DeleteBoxOkY;
+    float DeleteBoxOkXSize;
+    float DeleteBoxOkYSize;
+  //Quiz Done Amount Correct
+    float QuizDoneAmountCorrectX;
+    float QuizDoneAmountCorrectY;
+  //Quiz Done Score
+    float QuizDoneScoreX;
+    float QuizDoneScoreY;
+  //Quiz Done Menu
+    float QuizDoneMenuX;
+    float QuizDoneMenuY;
+    float QuizDoneMenuXSize;
+    float QuizDoneMenuYSize;
 
 
 //QuizData
@@ -143,6 +377,9 @@
   int HColorEx = 360;
   int SColorEx = 360;
   int BColorEx = 360;
+  int tab = 0;
+  int CurrectAmount = 0;
+  int QuestionClassesTem = 1;
 
 
 //float
@@ -152,6 +389,7 @@
   float MouseWheel = 0;
   float MouseWheelMax;
   float MouseWheelSpeed = 4;        //Can't be below 1!! How slow the speed is: 1 / (amount)
+  float StrokeWeight;
   
 
 
@@ -163,9 +401,18 @@
     String NewQuizFirstLine = "";
     String NewQuizSecondLine = "";
     String NewQuizThirdLine = "";
-    String NewQuizHColorString = "360";
-    String NewQuizSColorString = "360";
-    String NewQuizBColorString = "360";
+    String NewQuizNameTem = "Filename";
+    String NewQuizFirstLineTem = "Name: Math";
+    String NewQuizSecondLineTem = "Theme: Vectors in 3D";
+    String NewQuizThirdLineTem = "Difficulty: Hard";
+    String NewQuizHColorString = "";
+    String NewQuizSColorString = "";
+    String NewQuizBColorString = "";
+    String NewQuizHColorStringTem = "360";
+    String NewQuizSColorStringTem = "360";
+    String NewQuizBColorStringTem = "360";
+  //EditQuiz
+    String EditQuiz;
 
 
 //class
@@ -185,7 +432,19 @@
     boolean WriteHColor = false;
     boolean WriteSColor = false;
     boolean WriteBColor = false;
-    boolean AddedQuiz = false;
+  boolean AddedQuiz = false;
+  //EditQuiz
+    boolean WriteQuestionQuestion = false;
+    boolean WriteQuestionAnswerA = false;
+    boolean WriteQuestionAnswerB = false;
+    boolean WriteQuestionAnswerC = false;
+    boolean WriteQuestionAnswerD = false;
+    boolean SaveQuestionData = false;
+    boolean DeleteQuestion = false;
+    boolean DeleteQuiz = false;
+    boolean SureDelete = false;
+    boolean WriteDifficulty = false;
+    boolean CorrectData = false;
 
 
 //XML
