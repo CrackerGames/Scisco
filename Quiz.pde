@@ -114,10 +114,10 @@ class QuestionClass{
     rect(QuestionAnswerDX, QuestionAnswerDY, QuestionAnswerDXSize, QuestionAnswerDYSize);
     
     fill(0);
-    text(AnswerA, width * 0.2, height * 0.45, width * 0.275, height * 0.2);
-    text(AnswerB, width * 0.2, height * 0.7, width * 0.275, height * 0.2);
-    text(AnswerC, width * 0.525, height * 0.45, width * 0.275, height * 0.2);
-    text(AnswerD, width * 0.525, height * 0.7, width * 0.275, height * 0.2);
+    text(AnswerA, QuestionAnswerAX, QuestionAnswerAY, QuestionAnswerAXSize, QuestionAnswerAYSize);
+    text(AnswerB, QuestionAnswerBX, QuestionAnswerBY, QuestionAnswerBXSize, QuestionAnswerBYSize);
+    text(AnswerC, QuestionAnswerCX, QuestionAnswerCY, QuestionAnswerCXSize, QuestionAnswerCYSize);
+    text(AnswerD, QuestionAnswerDX, QuestionAnswerDY, QuestionAnswerDXSize, QuestionAnswerDYSize);
     
     textSize(width / 60);
     text(QuestionNumber + 1 + "/" + QuestionClasses.length, width * 0.9, height * 0.1);

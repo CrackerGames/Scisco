@@ -132,6 +132,7 @@ void NewQuiz(){
         NewQuizSubmit = false;
       } else {
         ShowQuizNameError = true;
+        NewQuizSubmit = false;
       }
     } else if (!Screen.equals("EditQuizName")){
       QuizSaveToData();

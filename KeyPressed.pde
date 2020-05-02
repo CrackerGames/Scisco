@@ -1,6 +1,6 @@
 void keyPressed(){
   if (WriteQuestionQuestion == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       QuestionClasses[QuestionNumber].Question += key;
     }
     if (key == BACKSPACE){
@@ -25,7 +25,7 @@ void keyPressed(){
   } //WriteQuestionQuestion
   
   if (WriteQuestionAnswerA == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       QuestionClasses[QuestionNumber].AnswerA += key;
     }
     if (key == BACKSPACE){
@@ -50,7 +50,7 @@ void keyPressed(){
   } //WriteQuestionAnswerA
   
   if (WriteQuestionAnswerB == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       QuestionClasses[QuestionNumber].AnswerB += key;
     }
     if (key == BACKSPACE){
@@ -75,7 +75,7 @@ void keyPressed(){
   } //WriteQuestionAnswerB
   
   if (WriteQuestionAnswerC == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       QuestionClasses[QuestionNumber].AnswerC += key;
     }
     if (key == BACKSPACE){
@@ -100,7 +100,7 @@ void keyPressed(){
   } //WriteQuestionAnswerC
   
   if (WriteQuestionAnswerD == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       QuestionClasses[QuestionNumber].AnswerD += key;
     }
     if (key == BACKSPACE){
@@ -143,7 +143,7 @@ void keyPressed(){
   
   
   if (WriteNewQuizName == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       ShowQuizNameError = false;
       NewQuizName += key;
     }
@@ -169,7 +169,7 @@ void keyPressed(){
   } //WriteNewQuizName
   
   if (WriteFirstLine == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       NewQuizFirstLine += key;
     }
     if (key == BACKSPACE){
@@ -193,7 +193,7 @@ void keyPressed(){
   } //WriteFirstLine
   
   if (WriteSecondLine == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       NewQuizSecondLine += key;
     }
     if (key == BACKSPACE){
@@ -217,7 +217,7 @@ void keyPressed(){
   } //WriteSecondLine
   
   if (WriteThirdLine == true){
-    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
+    if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || key == ' ' || key == ',' || key == ';' || key == '.' || key == ':' || key == '?' || key == '-' || key == '_' || key == '!' || key == '%' || key == '&' || key == '=' || key == '/' || key == '(' || key == ')' || key == '"' || (key >= '0' && key <= '9') || key == 'æ' || key == 'Æ' || key == 'ø' || key == 'Ø' || key == 'å' || key == 'Å' || key == '´'){
       NewQuizThirdLine += key;
     }
     if (key == BACKSPACE){
