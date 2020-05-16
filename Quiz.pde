@@ -20,13 +20,12 @@ class QuizClass{
 
   void Display(){
     noStroke();
-    colorMode(HSB, 360, 100, 100);
-    fill(HColor, SColor, BColor*0.5);
+    fill(HColor, SColor, BColor*0.7);
     RectYUse = RectYStart - (MouseWheel * RectYSize * QuizMenuWhiteSpace / MouseWheelSpeed);
     rect(RectX, RectYUse, RectXSize, RectYSize, 10);
 
     textSize(NameTextSize);
-    fill(HColor, SColor*0.4, BColor*1.5);
+    fill(0, 0, 100);
     textAlign(LEFT, CENTER);
     text(FirstLine, RectX + StrokeWeight * 5, RectYUse, RectXSize - StrokeWeight * 10, RectYSize / 3);
     text(SecondLine, RectX + StrokeWeight * 5, RectYUse + RectYSize / 3, RectXSize - StrokeWeight * 10, RectYSize / 3);

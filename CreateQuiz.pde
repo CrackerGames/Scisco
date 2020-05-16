@@ -42,7 +42,7 @@ void NewQuiz(){
     fill(219,35,15); //farve 3
   }
   rect(BColorX, BColorY, BColorXSize, BColorYSize, 10);
-  fill(HColorEx, SColorEx, BColorEx);
+  fill(HColorEx, SColorEx, BColorEx * 0.7);
   rect(ColorDisplayX, ColorDisplayY, ColorDisplayXSize, ColorDisplayYSize, 10);
   
   fill(0,0,50);
@@ -80,7 +80,7 @@ void NewQuiz(){
     text(NewQuizHColorString, HColorX, HColorY - height * 0.003, HColorXSize, HColorYSize);
   } else {
     fill(0, 0, 25); //farve 4
-    text(NewQuizSColorStringTem, HColorX, HColorY - height * 0.003, HColorXSize, HColorYSize);
+    text(NewQuizHColorStringTem, HColorX, HColorY - height * 0.003, HColorXSize, HColorYSize);
     fill(0,0,50); //farve 5
   }
   text("Hue", HColorX + HColorXSize / 2, HColorY - height * 0.003 + HColorYSize * 1.5);
@@ -131,7 +131,7 @@ void NewQuiz(){
         NewQuizBColorString = "";
         HColorEx = 360;
         SColorEx = 100;
-        BColorEx = 50;
+        BColorEx = 100;
         LoadFiles();
         LoadQuestionData();
         Screen = "EditQuiz";
@@ -294,7 +294,7 @@ void EditQuizName(){
     NewQuizBColorString = "";
     HColorEx = 360;
     SColorEx = 100;
-    BColorEx = 50;
+    BColorEx = 100;
   }
 }
 

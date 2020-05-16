@@ -490,7 +490,7 @@
     String NewQuizBColorString = "";
     String NewQuizHColorStringTem = "360";
     String NewQuizSColorStringTem = "100";
-    String NewQuizBColorStringTem = "50";
+    String NewQuizBColorStringTem = "100";
   //EditQuiz
     String EditQuiz;
 

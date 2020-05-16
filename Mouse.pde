@@ -24,8 +24,8 @@ void mousePressed(){
         NewQuizSColorString = "";
         NewQuizBColorString = "";
         HColorEx = 360;
-        SColorEx = 360;
-        BColorEx = 360;
+        SColorEx = 100;
+        BColorEx = 100;
       }
       //Reload Button
       if (mouseX >= ReloadX && mouseY >= ReloadY && mouseX <= ReloadX + ReloadXSize && mouseY <= ReloadY + ReloadYSize){
@@ -412,8 +412,8 @@ void mouseWheel (MouseEvent event){
     
     if (mouseX >= SColorX && mouseY >=  SColorY && mouseX <= SColorX + SColorXSize && mouseY <=  SColorY + SColorYSize){
       SColorEx -= event.getCount();
-      if (SColorEx > 360){
-        SColorEx = 360;
+      if (SColorEx > 100){
+        SColorEx = 100;
       } else if (SColorEx < 0){
         SColorEx = 0;
       }
@@ -422,8 +422,8 @@ void mouseWheel (MouseEvent event){
     
     if (mouseX >= BColorX && mouseY >=  BColorY && mouseX <= BColorX + BColorXSize && mouseY <=  BColorY + BColorYSize){
       BColorEx -= event.getCount();
-      if (BColorEx > 360){
-        BColorEx = 360;
+      if (BColorEx > 100){
+        BColorEx = 100;
       } else if (BColorEx < 0){
         BColorEx = 0;
       }
