@@ -47,13 +47,14 @@ void EditQuiz(){
 
 
 void PlayOrEdit(){
-  fill(360);
-  rect(PlayX, PlayY, PlayXSize, PlayYSize);
-  rect(EditQuizX, EditQuizY, EditQuizXSize, EditQuizYSize);
-  rect(EditNameX, EditNameY, EditNameXSize, EditNameYSize);
-  rect(DeleteQuizX, DeleteQuizY, DeleteQuizXSize, DeleteQuizYSize);
+  noStroke();
+  fill(220, 35, 23);
+  rect(PlayX, PlayY, PlayXSize, PlayYSize, 10);
+  rect(EditQuizX, EditQuizY, EditQuizXSize, EditQuizYSize, 10);
+  rect(EditNameX, EditNameY, EditNameXSize, EditNameYSize, 10);
+  rect(DeleteQuizX, DeleteQuizY, DeleteQuizXSize, DeleteQuizYSize,10);
   
-  fill(0);
+  fill(201,20,89); //Lys blå
   textSize(width / 20);
   text("Play", PlayX, PlayY, PlayXSize, PlayYSize);
   text("Edit Quiz", EditQuizX, EditQuizY - height * 0.003, EditQuizXSize, EditQuizYSize);
@@ -62,15 +63,15 @@ void PlayOrEdit(){
   text("Delete", DeleteQuizX, DeleteQuizY - height * 0.003, DeleteQuizXSize, DeleteQuizYSize);
   
   if (SureDelete == true){
-    fill(360);
-    rect(DeleteBoxX, DeleteBoxY, DeleteBoxXSize, DeleteBoxYSize);
+    fill(219, 35, 19); //farve 3
+    rect(DeleteBoxX, DeleteBoxY, DeleteBoxXSize, DeleteBoxYSize, 10);
     if (QuizClasses.length > 1){
       rect(DeleteBoxNoX, DeleteBoxNoY, DeleteBoxNoXSize, DeleteBoxNoYSize);
       rect(DeleteBoxYesX, DeleteBoxYesY, DeleteBoxYesXSize, DeleteBoxYesYSize);
     } else {
       rect(DeleteBoxOkX, DeleteBoxOkY, DeleteBoxOkXSize, DeleteBoxOkYSize);
     }
-    fill(0);
+    fill(201, 20, 89); //farve 9
     if (QuizClasses.length > 1){
       textSize(width / 30);
       text("Are you sure?", DeleteBoxX, DeleteBoxY - DeleteBoxYSize / 8, DeleteBoxXSize, DeleteBoxYSize);

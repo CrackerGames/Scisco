@@ -1,106 +1,108 @@
 void NewQuiz(){
-  fill(360);
-  rect(SubmitX, SubmitY, SubmitXSize, SubmitYSize);
-  fill(360);
+  fill(220,35,21);
+  noStroke();
+  rect(SubmitX, SubmitY, SubmitXSize, SubmitYSize, 10);
+  fill(221,61,6);
   if (WriteNewQuizName == true){
-    fill(300);
+    fill(219,35,15); //farve 3
   }
-  rect(NewQuizNameX, NewQuizNameY,NewQuizNameXSize, NewQuizNameYSize);
-  fill(360);
+  rect(NewQuizNameX, NewQuizNameY,NewQuizNameXSize, NewQuizNameYSize, 10);
+  fill(221,61,6);
   if (WriteFirstLine == true){
-    fill(300);
+    fill(219,35,15); //farve 3
   }
-  rect(FirstLineX, FirstLineY, FirstLineXSize, FirstLineYSize);
-  fill(360);
+  rect(FirstLineX, FirstLineY, FirstLineXSize, FirstLineYSize, 10);
+  fill(221,61,6);
   if (WriteSecondLine == true){
-    fill(300);
+    fill(219,35,15); //farve 3
   }
-  rect(SecondLineX, SecondLineY, SecondLineXSize, SecondLineYSize);
-  fill(360);
+  rect(SecondLineX, SecondLineY, SecondLineXSize, SecondLineYSize, 10);
+  fill(221,61,6);
   if (WriteThirdLine == true){
-    fill(300);
+    fill(219,35,15); //farve 3
   }
-  rect(ThirdLineX, ThirdLineY, ThirdLineXSize, ThirdLineYSize);
-  fill(360);
-  if (WriteHColor == true){
-    fill(300);
-  }
-  
-  rect(HColorSelectX - height * 0.001, HColorSelectY - height * 0.001, HColorSelectXSize + height * 0.002, HColorSelectYSize + height * 0.002);
+
   image(ColorSelect, HColorSelectX, HColorSelectY, HColorSelectXSize, HColorSelectYSize);
+  //rect(HColorSelectX - height * 0.001, HColorSelectY - height * 0.001, HColorSelectXSize + height * 0.002, HColorSelectYSize + height * 0.002, 10);
   
-  rect(HColorX, HColorY, HColorXSize, HColorYSize);
-  fill(360);
+  rect(ThirdLineX, ThirdLineY, ThirdLineXSize, ThirdLineYSize, 10);
+  fill(221,61,6);
+  if (WriteHColor == true){
+    fill(219,35,15); //farve 3
+  }
+  
+  rect(HColorX, HColorY, HColorXSize, HColorYSize, 10);
+  fill(221,61,6);
   if (WriteSColor == true){
-    fill(300);
+    fill(219,35,15); //farve 3
   }
-  rect(SColorX, SColorY, SColorXSize, SColorYSize);
-  fill(360);
+  rect(SColorX, SColorY, SColorXSize, SColorYSize, 10);
+  fill(221,61,6);
   if (WriteBColor == true){
-    fill(300);
+    fill(219,35,15); //farve 3
   }
-  rect(BColorX, BColorY, BColorXSize, BColorYSize);
+  rect(BColorX, BColorY, BColorXSize, BColorYSize, 10);
   fill(HColorEx, SColorEx, BColorEx);
-  rect(ColorDisplayX, ColorDisplayY, ColorDisplayXSize, ColorDisplayYSize);
+  rect(ColorDisplayX, ColorDisplayY, ColorDisplayXSize, ColorDisplayYSize, 10);
   
-  fill(0);
+  fill(0,0,50);
   textSize(width / 60.0);
-  text("Submit", SubmitX, SubmitY, SubmitXSize, SubmitYSize);
+  text("Submit", SubmitX, SubmitY*0.995, SubmitXSize, SubmitYSize);
   if (WriteNewQuizName == true || !NewQuizName.equals("")){
     text(NewQuizName, NewQuizNameX, NewQuizNameY - height * 0.003, NewQuizNameXSize, NewQuizNameYSize);
   } else {
-    fill(100);
+    fill(0, 100, 30); //farve 6
     text(NewQuizNameTem, NewQuizNameX, NewQuizNameY - height * 0.003, NewQuizNameXSize, NewQuizNameYSize);
-    fill(0);
+    fill(0,0,50); //farve 5
   }
   if (WriteFirstLine == true || !NewQuizFirstLine.equals("")){
     text(NewQuizFirstLine, FirstLineX, FirstLineY - height * 0.003, FirstLineXSize, FirstLineYSize);
   } else {
-    fill(100);
+    fill(0, 0, 25); //farve 4
     text(NewQuizFirstLineTem, FirstLineX, FirstLineY - height * 0.003, FirstLineXSize, FirstLineYSize);
-    fill(0);
+    fill(0,0,50); //farve 5
   }
   if (WriteSecondLine == true || !NewQuizSecondLine.equals("")){
     text(NewQuizSecondLine, SecondLineX, SecondLineY - height * 0.003, SecondLineXSize, SecondLineYSize);
   } else {
-    fill(100);
+    fill(0, 0, 25); //farve 4
     text(NewQuizSecondLineTem, SecondLineX, SecondLineY - height * 0.003, SecondLineXSize, SecondLineYSize);
-    fill(0);
+    fill(0,0,50); //farve 5
   }
   if (WriteThirdLine == true || !NewQuizThirdLine.equals("")){
     text(NewQuizThirdLine, ThirdLineX, ThirdLineY - height * 0.003, ThirdLineXSize, ThirdLineYSize);
   } else {
-    fill(100);
+    fill(0, 0, 25); //farve 4
     text(NewQuizThirdLineTem, ThirdLineX, ThirdLineY - height * 0.003, ThirdLineXSize, ThirdLineYSize);
-    fill(0);
+    fill(0,0,50); //farve 5
   }
   if (WriteHColor == true || !NewQuizHColorString.equals("")){
     text(NewQuizHColorString, HColorX, HColorY - height * 0.003, HColorXSize, HColorYSize);
   } else {
-    fill(100);
+    fill(0, 0, 25); //farve 4
     text(NewQuizSColorStringTem, HColorX, HColorY - height * 0.003, HColorXSize, HColorYSize);
-    fill(0);
+    fill(0,0,50); //farve 5
   }
   text("Hue", HColorX + HColorXSize / 2, HColorY - height * 0.003 + HColorYSize * 1.5);
   if (WriteSColor == true || !NewQuizSColorString.equals("")){
     text(NewQuizSColorString, SColorX, SColorY - height * 0.003, SColorXSize, SColorYSize);
   } else {
-    fill(100);
+    fill(0, 0, 25); //farve 4
     text(NewQuizSColorStringTem, SColorX, SColorY - height * 0.003, SColorXSize, SColorYSize);
-    fill(0);
+    fill(0,0,50); //farve 5
   }
   text("Saturation", SColorX + SColorXSize / 2, SColorY - height * 0.003 + SColorYSize * 1.5);
   if (WriteBColor == true || !NewQuizBColorString.equals("")){
     text(NewQuizBColorString, BColorX, BColorY - height * 0.003, BColorXSize, BColorYSize);
   } else {
-    fill(100);
+    fill(0, 0, 25); //farve 4
     text(NewQuizBColorStringTem, BColorX, BColorY - height * 0.003, BColorXSize, BColorYSize);
-    fill(0);
+    fill(0,0,50); //farve 5
   }
   text("Brightness", BColorX + BColorXSize / 2, BColorY - height * 0.003 + BColorYSize * 1.5);
   
   if (ShowQuizNameError == true){
-    fill(360, 360, 360);
+    fill(0, 100, 67);
     text("Not a valid name.", width * 0.5, height * 0.9);
   }
   if (NewQuizSubmit == true){
@@ -128,8 +130,8 @@ void NewQuiz(){
         NewQuizSColorString = "";
         NewQuizBColorString = "";
         HColorEx = 360;
-        SColorEx = 360;
-        BColorEx = 360;
+        SColorEx = 100;
+        BColorEx = 50;
         LoadFiles();
         LoadQuestionData();
         Screen = "EditQuiz";
@@ -148,8 +150,8 @@ void NewQuiz(){
       NewQuizSColorString = "";
       NewQuizBColorString = "";
       HColorEx = 360;
-      SColorEx = 360;
-      BColorEx = 360;
+      SColorEx = 100;
+      BColorEx = 100;
       Screen = "MainMenu";
       NewQuizSubmit = false;
       LoadFiles();
@@ -291,8 +293,8 @@ void EditQuizName(){
     NewQuizSColorString = "";
     NewQuizBColorString = "";
     HColorEx = 360;
-    SColorEx = 360;
-    BColorEx = 360;
+    SColorEx = 100;
+    BColorEx = 50;
   }
 }
 

@@ -3,7 +3,7 @@
     //Exit
       ExitX = width * 0.94;
       ExitY = height * 0.9;
-      ExitXSize = width * 0.025;
+      ExitXSize = width * 0.04;
       ExitYSize = width * 0.025;
     //New
       NewX = width * 0.88;
@@ -455,8 +455,8 @@
   int TestAmount;
   int NewQuizColorInt;
   int HColorEx = 360;
-  int SColorEx = 360;
-  int BColorEx = 360;
+  int SColorEx = 100;
+  int BColorEx = 100;
   int tab = 0;
   int CurrectAmount = 0;
   int QuestionClassesTem = 1;
@@ -489,8 +489,8 @@
     String NewQuizSColorString = "";
     String NewQuizBColorString = "";
     String NewQuizHColorStringTem = "360";
-    String NewQuizSColorStringTem = "360";
-    String NewQuizBColorStringTem = "360";
+    String NewQuizSColorStringTem = "100";
+    String NewQuizBColorStringTem = "50";
   //EditQuiz
     String EditQuiz;
 

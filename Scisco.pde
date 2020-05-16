@@ -1,7 +1,7 @@
 void setup(){
   Data = loadXML(sketchPath("Data/") + "Data.xml");
-  colorMode(HSB, 360);
-  background(360);
+  colorMode(HSB, 360, 100, 100);
+  background(0);
   fullScreen();
   CallibrateVariables();
   frameRate(60);
@@ -12,7 +12,7 @@ void setup(){
 }
 
 void draw(){
-  background(360);
+  background(220,42,11); //Farve 2
   
   if (!Screen.equals("MainMenu") && !Screen.equals("AddedQuiz") && QuestionNumber < QuestionClassesTem){
     image(Return, ReturnX, ReturnY, ReturnXSize, ReturnYSize);

@@ -11,23 +11,22 @@ class QuizClass{
   String FirstLine = "";
   String SecondLine = "";
   String ThirdLine = "";
-  int HColor = 200;
-  int SColor = 200;
-  int BColor = 200;
-  
+  int HColor = 360;
+  int SColor = 100;
+  int BColor = 100;
+
   boolean Moved = false;
-  
-  
+
+
   void Display(){
-    colorMode(HSB, 360);
-    fill(HColor, SColor, BColor);
-    strokeWeight(StrokeWeight);
-    stroke(0);
+    noStroke();
+    colorMode(HSB, 360, 100, 100);
+    fill(HColor, SColor, BColor*0.5);
     RectYUse = RectYStart - (MouseWheel * RectYSize * QuizMenuWhiteSpace / MouseWheelSpeed);
-    rect(RectX, RectYUse, RectXSize, RectYSize);
-    
+    rect(RectX, RectYUse, RectXSize, RectYSize, 10);
+
     textSize(NameTextSize);
-    fill(0);
+    fill(HColor, SColor*0.4, BColor*1.5);
     textAlign(LEFT, CENTER);
     text(FirstLine, RectX + StrokeWeight * 5, RectYUse, RectXSize - StrokeWeight * 10, RectYSize / 3);
     text(SecondLine, RectX + StrokeWeight * 5, RectYUse + RectYSize / 3, RectXSize - StrokeWeight * 10, RectYSize / 3);
@@ -59,78 +58,78 @@ class QuestionClass{
   int Difficulty = 1;
   int TimerBlink;
   int TimerNextQuestion;
-  
-  int[] AnswerAColorHSB = {360,360,360};
-  int[] AColorHSB = {360,0,360};
+
+  int[] AnswerAColorHSB = {0,100,67};
+  int[] AColorHSB = {219,35,19};
   String AnswerA = "";
   String CorrectA = "True";
   Boolean ClickA = false;
-  int[] AnswerBColorHSB = {360,360,360};
-  int[] BColorHSB = {360,0,360};
+  int[] AnswerBColorHSB = {0,100,67};
+  int[] BColorHSB = {219,35,19};
   String AnswerB = "";
   String CorrectB = "True";
   Boolean ClickB = false;
-  int[] AnswerCColorHSB = {360,360,360};
-  int[] CColorHSB = {360,0,360};
+  int[] AnswerCColorHSB = {0,100,67};
+  int[] CColorHSB = {219,35,19};
   String AnswerC = "";
   String CorrectC = "True";
   Boolean ClickC = false;
-  int[] AnswerDColorHSB = {360,360,360};
-  int[] DColorHSB = {360,0,360};
+  int[] AnswerDColorHSB = {0,100,67};
+  int[] DColorHSB = {219,35,19};
   String AnswerD = "";
   String CorrectD = "True";
   Boolean ClickD = false;
-  
+
   void DisplayQuestion(){
     textSize(width / 60);
-    stroke(0);
-    fill(360);
+    noStroke();
+    fill(220, 43, 7); //farve 3 (-12 b)
     if (WriteQuestionQuestion == true){
-      fill(300);
+      fill(219, 35, 30); //(farve 3)
     }
-    rect(QuestionQuestionX, QuestionQuestionY, QuestionQuestionXSize, QuestionQuestionYSize);
-    fill(0);
+    rect(QuestionQuestionX, QuestionQuestionY, QuestionQuestionXSize, QuestionQuestionYSize, 10);
+    fill(201, 20, 89); //farve 9
     text(Question, QuestionQuestionX, QuestionQuestionY, QuestionQuestionXSize, QuestionQuestionYSize);
-    
+
     fill(AColorHSB[0], AColorHSB[1], AColorHSB[2]);
     if (WriteQuestionAnswerA == true){
-      fill(300);
+      fill(219, 35, 30); //(farve 3)
     }
-    rect(QuestionAnswerAX, QuestionAnswerAY, QuestionAnswerAXSize, QuestionAnswerAYSize);
+    rect(QuestionAnswerAX, QuestionAnswerAY, QuestionAnswerAXSize, QuestionAnswerAYSize, 10);
     fill(BColorHSB[0], BColorHSB[1], BColorHSB[2]);
     if (WriteQuestionAnswerB == true){
-      fill(300);
+      fill(219, 35, 30); //(farve 3)
     }
-    rect(QuestionAnswerBX, QuestionAnswerBY, QuestionAnswerBXSize, QuestionAnswerBYSize);
+    rect(QuestionAnswerBX, QuestionAnswerBY, QuestionAnswerBXSize, QuestionAnswerBYSize, 10);
     fill(CColorHSB[0], CColorHSB[1], CColorHSB[2]);
     if (WriteQuestionAnswerC == true){
-      fill(300);
+      fill(219, 35, 30); //(farve 3)
     }
-    rect(QuestionAnswerCX, QuestionAnswerCY, QuestionAnswerCXSize, QuestionAnswerCYSize);
+    rect(QuestionAnswerCX, QuestionAnswerCY, QuestionAnswerCXSize, QuestionAnswerCYSize, 10);
     fill(DColorHSB[0], DColorHSB[1], DColorHSB[2]);
     if (WriteQuestionAnswerD == true){
-      fill(300);
+      fill(219, 35, 30); //(farve 3)
     }
-    rect(QuestionAnswerDX, QuestionAnswerDY, QuestionAnswerDXSize, QuestionAnswerDYSize);
-    
-    fill(0);
+    rect(QuestionAnswerDX, QuestionAnswerDY, QuestionAnswerDXSize, QuestionAnswerDYSize, 10);
+
+    fill(201, 20, 89); //farve 9
     text(AnswerA, QuestionAnswerAX, QuestionAnswerAY, QuestionAnswerAXSize, QuestionAnswerAYSize);
     text(AnswerB, QuestionAnswerBX, QuestionAnswerBY, QuestionAnswerBXSize, QuestionAnswerBYSize);
     text(AnswerC, QuestionAnswerCX, QuestionAnswerCY, QuestionAnswerCXSize, QuestionAnswerCYSize);
     text(AnswerD, QuestionAnswerDX, QuestionAnswerDY, QuestionAnswerDXSize, QuestionAnswerDYSize);
-    
+
     textSize(width / 60);
     text(QuestionNumber + 1 + "/" + QuestionClasses.length, width * 0.9, height * 0.1);
   }
-  
+
   void PlayQuestion(){
     textSize(width / 60);
     if (ScoreActive == true && ShowCorrectActive == true){
       text(floor(Score), width * 0.9, height * 0.15);
     }
-    
+
     TimerQuestion++;
-    
+
     if (ShowCorrectActive == true){
       if(ClickA == true || ClickB == true || ClickC == true || ClickD == true){
         if(TimerBlink > 9){
@@ -163,7 +162,7 @@ class QuestionClass{
         }
         TimerNextQuestion++;
         TimerBlink++;
-        
+
         if(TimerNextQuestion == 119){
           TimerBlink = 20;
           TimerQuestion = 1;
@@ -180,29 +179,31 @@ class QuestionClass{
       }
     }
   }
-  
+
   void QuestionEditQuiz(){
+    noStroke();
     fill(AnswerAColorHSB[0], AnswerAColorHSB[1], AnswerAColorHSB[2]);
-    rect(QuestionAnswerACorrectX, QuestionAnswerACorrectY, QuestionAnswerACorrectXSize, QuestionAnswerACorrectYSize);
+    rect(QuestionAnswerACorrectX, QuestionAnswerACorrectY, QuestionAnswerACorrectXSize, QuestionAnswerACorrectYSize, 10);
     fill(AnswerBColorHSB[0], AnswerBColorHSB[1], AnswerBColorHSB[2]);
-    rect(QuestionAnswerBCorrectX, QuestionAnswerBCorrectY, QuestionAnswerBCorrectXSize, QuestionAnswerBCorrectYSize);
+    rect(QuestionAnswerBCorrectX, QuestionAnswerBCorrectY, QuestionAnswerBCorrectXSize, QuestionAnswerBCorrectYSize, 10);
     fill(AnswerCColorHSB[0], AnswerCColorHSB[1], AnswerCColorHSB[2]);
-    rect(QuestionAnswerCCorrectX, QuestionAnswerCCorrectY, QuestionAnswerCCorrectXSize, QuestionAnswerCCorrectYSize);
+    rect(QuestionAnswerCCorrectX, QuestionAnswerCCorrectY, QuestionAnswerCCorrectXSize, QuestionAnswerCCorrectYSize, 10);
     fill(AnswerDColorHSB[0], AnswerDColorHSB[1], AnswerDColorHSB[2]);
-    rect(QuestionAnswerDCorrectX, QuestionAnswerDCorrectY, QuestionAnswerDCorrectXSize, QuestionAnswerDCorrectYSize);
-    
-    fill(360);
+    rect(QuestionAnswerDCorrectX, QuestionAnswerDCorrectY, QuestionAnswerDCorrectXSize, QuestionAnswerDCorrectYSize, 10);
+
+    fill(0); //farve 1
     if (WriteDifficulty == true){
-      fill(300);
+      fill(219, 35, 19); //farve 3
     }
     textSize(width / 60);
-    rect(DifficultyX, DifficultyY, DifficultyXSize, DifficultyYSize);
-    fill(0);
+    noStroke();
+    rect(DifficultyX, DifficultyY, DifficultyXSize, DifficultyYSize, 10);
+    fill(100,100,50); //farve 5
     text(DifficultyString, DifficultyX, DifficultyY - height * 0.003, DifficultyXSize, DifficultyYSize);
-    
+
     textSize(width / 60);
     textAlign(CENTER, CENTER);
-    fill(0);
+    fill(0,0,50); //farve 5
     text("Question", QuestionQuestionX + QuestionQuestionXSize / 2, QuestionQuestionY  - height * 0.03);
     text("Answer A", QuestionAnswerAX + QuestionAnswerAXSize / 2, QuestionAnswerAY - height * 0.03);
     text("Answer B", QuestionAnswerBX + QuestionAnswerBXSize / 2, QuestionAnswerBY  - height * 0.03);
@@ -210,36 +211,39 @@ class QuestionClass{
     text("Answer D", QuestionAnswerDX + QuestionAnswerDXSize / 2, QuestionAnswerDY + QuestionAnswerAYSize + height * 0.02);
     text("Difficulty", DifficultyX + DifficultyXSize / 2, DifficultyY + DifficultyYSize * 1.5);
     text("1 - 4", DifficultyX + DifficultyXSize / 2, DifficultyY + DifficultyYSize * 2.2);
-    
-    fill(360);
-    rect(NextX, NextY, NextXSize, NextYSize);
+
+    fill(219,35,19); //farve 3
+    rect(NextX, NextY, NextXSize, NextYSize, 10);
     if (QuestionNumber != 0){
-      rect(PreviousX, PreviousY, PreviousXSize, PreviousYSize);
+      rect(PreviousX, PreviousY, PreviousXSize, PreviousYSize, 10);
     }
     if (1 < QuestionClasses.length){
-      rect(DeleteQuestionX, DeleteQuestionY, DeleteQuestionXSize, DeleteQuestionYSize);
+      rect(DeleteQuestionX, DeleteQuestionY, DeleteQuestionXSize, DeleteQuestionYSize, 10);
     }
-    
-    fill(0);
+
+    fill(100, 100, 50); //farve 8
     textSize(width / 60.0);
     if (QuestionNumber + 1 == QuestionClasses.length){
-      text("New", NextX, NextY - height * 0.003, NextXSize, NextYSize);
+      text("Add", NextX, NextY - height * 0.003, NextXSize, NextYSize);
     } else {
+      fill(201, 20, 89);
       text("Next", NextX, NextY - height * 0.003, NextXSize, NextYSize);
     }
     if (QuestionNumber != 0){
+      fill(201, 20, 89);
       text("Prev", PreviousX, PreviousY - height * 0.003, PreviousXSize, PreviousYSize);
     }
     if (1 < QuestionClasses.length){
+      fill(0, 100, 67);
       text("Delete", DeleteQuestionX, DeleteQuestionY - height * 0.003, DeleteQuestionXSize, DeleteQuestionYSize);
     }
-    
+
     if (SureDelete == true){
-      fill(360);
-      rect(DeleteBoxX, DeleteBoxY, DeleteBoxXSize, DeleteBoxYSize);
-      rect(DeleteBoxNoX, DeleteBoxNoY, DeleteBoxNoXSize, DeleteBoxNoYSize);
-      rect(DeleteBoxYesX, DeleteBoxYesY, DeleteBoxYesXSize, DeleteBoxYesYSize);
-      fill(0);
+      fill(219, 35, 19); //farve 3
+      rect(DeleteBoxX, DeleteBoxY, DeleteBoxXSize, DeleteBoxYSize, 10);
+      rect(DeleteBoxNoX, DeleteBoxNoY, DeleteBoxNoXSize, DeleteBoxNoYSize, 10);
+      rect(DeleteBoxYesX, DeleteBoxYesY, DeleteBoxYesXSize, DeleteBoxYesYSize, 10);
+      fill(201, 20, 89); //farve 9
       textSize(width / 30);
       text("Are you sure?", DeleteBoxX, DeleteBoxY - DeleteBoxYSize / 8, DeleteBoxXSize, DeleteBoxYSize);
       textSize(width / 60);

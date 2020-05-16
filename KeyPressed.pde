@@ -287,9 +287,9 @@ void keyPressed(){
     }
     //SColorEx = Integer.parseInt("NewQuizSColorString");
     SColorEx = int(NewQuizSColorString);
-    if (SColorEx > 360){
-      SColorEx = 360;
-      NewQuizSColorString = "360";
+    if (SColorEx > 100){
+      SColorEx = 100;
+      NewQuizSColorString = "100";
     } else if (SColorEx < 0){
       SColorEx = 0;
       NewQuizSColorString = "";
@@ -319,9 +319,9 @@ void keyPressed(){
       NewQuizBColorString = "";
     }
     BColorEx = int(NewQuizBColorString);
-    if (BColorEx > 360){
-      BColorEx = 360;
-      NewQuizBColorString = "360";
+    if (BColorEx > 100){
+      BColorEx = 100;
+      NewQuizBColorString = "100";
     } else if (BColorEx < 0){
       BColorEx = 0;
       NewQuizBColorString = "0";

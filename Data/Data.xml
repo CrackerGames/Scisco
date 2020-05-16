@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Data>
-  <LogIn>
-    <Name>Tobias</Name>
-    <Password/>
-    <Email/>
-    <Adresse/>
-  </LogIn>
   <Settings>
     <ScoreActive>True</ScoreActive>
     <DifficultyActive>True</DifficultyActive>
@@ -15,10 +9,17 @@
   <QuizDataArray>
     <QuizData>
       <FileName>Matematik.xml</FileName>
-      <FirstLine>Fag: Matematik</FirstLine>
+      <FirstLine>Class: Mathmatics</FirstLine>
       <SecondLine>Emne: Vektor</SecondLine>
-      <ThirdLine>IDK</ThirdLine>
-      <Color B="360" H="200" S="150"/>
+      <ThirdLine>Difficulty: Hard</ThirdLine>
+      <Color B="300" H="180" S="150"/>
+    </QuizData>
+    <QuizData>
+      <FileName>TrickQuestions.xml</FileName>
+      <FirstLine>TrickQuestions</FirstLine>
+      <SecondLine>Can you solve these</SecondLine>
+      <ThirdLine>Difficulty: Dumb</ThirdLine>
+      <Color B="200" H="155" S="100"/>
     </QuizData>
   </QuizDataArray>
 </Data>

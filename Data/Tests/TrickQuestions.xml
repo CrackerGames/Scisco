@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Data>
+  <QuizName>TrickQuestions</QuizName>
+  <Questions>
+    <Question>
+      <Title/>
+      <Difficulty D="1"/>
+      <Question>Where does the general keep his armies?</Question>
+      <A>
+        <Answer>In the barracks</Answer>
+        <Correct>False</Correct>
+      </A>
+      <B>
+        <Answer>On the fields</Answer>
+        <Correct>False</Correct>
+      </B>
+      <C>
+        <Answer>Up his sleeves</Answer>
+        <Correct>True</Correct>
+      </C>
+      <D>
+        <Answer>On his body</Answer>
+        <Correct>False</Correct>
+      </D>
+    </Question>
+    <Question>
+      <Title/>
+      <Difficulty D="1"/>
+      <Question>Which of the following do you need to build a green house?</Question>
+      <A>
+        <Answer>Glass</Answer>
+        <Correct>False</Correct>
+      </A>
+      <B>
+        <Answer>Plants</Answer>
+        <Correct>False</Correct>
+      </B>
+      <C>
+        <Answer>Light</Answer>
+        <Correct>False</Correct>
+      </C>
+      <D>
+        <Answer>Paint</Answer>
+        <Correct>True</Correct>
+      </D>
+    </Question>
+    <Question>
+      <Title/>
+      <Difficulty D="1"/>
+      <Question>Which is the largest?</Question>
+      <A>
+        <Answer>Galaxy</Answer>
+        <Correct>False</Correct>
+      </A>
+      <B>
+        <Answer>Pi</Answer>
+        <Correct>True</Correct>
+      </B>
+      <C>
+        <Answer>Googleplex</Answer>
+        <Correct>False</Correct>
+      </C>
+      <D>
+        <Answer>Pneumonoltramicroscopicsilicovolcanoconiosis</Answer>
+        <Correct>False</Correct>
+      </D>
+    </Question>
+    <Question>
+      <Title/>
+      <Difficulty D="1"/>
+      <Question>Can you tie a knot?</Question>
+      <A>
+        <Answer>You can knot</Answer>
+        <Correct>True</Correct>
+      </A>
+      <B>
+        <Answer>You can not</Answer>
+        <Correct>False</Correct>
+      </B>
+      <C>
+        <Answer>You can not knot</Answer>
+        <Correct>False</Correct>
+      </C>
+      <D>
+        <Answer>You do not know if you can not knot</Answer>
+        <Correct>False</Correct>
+      </D>
+    </Question>
+    <Question>
+      <Title/>
+      <Difficulty D="1"/>
+      <Question>What is a tie?</Question>
+      <A>
+        <Answer>A piece of cloth you bind around your neck to look fancy</Answer>
+        <Correct>False</Correct>
+      </A>
+      <B>
+        <Answer>A score with equally many points on both sides</Answer>
+        <Correct>True</Correct>
+      </B>
+      <C>
+        <Answer>A word</Answer>
+        <Correct>False</Correct>
+      </C>
+      <D>
+        <Answer>The begining of a name of a vehicle from a famous movie</Answer>
+        <Correct>False</Correct>
+      </D>
+    </Question>
+  </Questions>
+</Data>
