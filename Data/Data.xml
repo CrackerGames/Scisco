@@ -15,12 +15,5 @@
       <ThirdLine>Difficulty: Hard</ThirdLine>
       <Color B="70" H="180" S="100"/>
     </QuizData>
-    <QuizData>
-      <FileName>TrickQuestions.xml</FileName>
-      <FirstLine>TrickQuestions</FirstLine>
-      <SecondLine>Can you solve these</SecondLine>
-      <ThirdLine>Difficulty: Dumb</ThirdLine>
-      <Color B="70" H="155" S="100"/>
-    </QuizData>
   </QuizDataArray>
 </Data>

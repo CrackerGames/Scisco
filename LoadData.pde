@@ -18,6 +18,7 @@ void LoadFiles(){
   XML DifficultyActiveData = SettingsData.getChild("DifficultyActive");
   XML ComboActiveData = SettingsData.getChild("ComboActive");
   XML ShowCorrectActiveData = SettingsData.getChild("ShowCorrectActive");
+  XML ShowCorrectAnswersData = SettingsData.getChild("ShowCorrectAnswers");
   
   if (ScoreActiveData.getContent().equals("True")){
     ScoreActive = true;
@@ -38,6 +39,11 @@ void LoadFiles(){
     ShowCorrectActive = true;
   } else {
     ShowCorrectActive = false;
+  }
+  if (ShowCorrectAnswersData.getContent().equals("True")){
+    ShowCorrectAnswers = true;
+  } else {
+    ShowCorrectAnswers = false;
   }
   
   
