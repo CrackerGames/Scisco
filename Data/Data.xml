@@ -5,6 +5,7 @@
     <DifficultyActive>True</DifficultyActive>
     <ComboActive>True</ComboActive>
     <ShowCorrectActive>True</ShowCorrectActive>
+    <ShowCorrectAnswers>True</ShowCorrectAnswers>
   </Settings>
   <QuizDataArray>
     <QuizData>

@@ -128,23 +128,45 @@ class QuestionClass{
     }
 
     TimerQuestion++;
-
+    
     if (ShowCorrectActive == true){
       if(ClickA == true || ClickB == true || ClickC == true || ClickD == true){
         if(TimerBlink > 9){
-          if(ClickA == true){
-            AColorHSB[0] = AnswerAColorHSB[0];
-            AColorHSB[1] = AnswerAColorHSB[1];
-          } else if(ClickB == true){
-            BColorHSB[0] = AnswerBColorHSB[0];
-            BColorHSB[1] = AnswerBColorHSB[1];
-          } else if(ClickC == true){
-            CColorHSB[0] = AnswerCColorHSB[0];
-            CColorHSB[1] = AnswerCColorHSB[1];
-          } else if(ClickD == true){
-            DColorHSB[0] = AnswerDColorHSB[0];
-            DColorHSB[1] = AnswerDColorHSB[1];
-          }
+          if(ShowCorrectAnswers == true){
+            if(ClickA == true || CorrectA.equals("True")){
+              AColorHSB[0] = AnswerAColorHSB[0];
+              AColorHSB[1] = AnswerAColorHSB[1];
+            }
+            if(ClickB == true || CorrectB.equals("True")){
+              BColorHSB[0] = AnswerBColorHSB[0];
+              BColorHSB[1] = AnswerBColorHSB[1];
+            }
+            if(ClickC == true || CorrectC.equals("True")){
+              CColorHSB[0] = AnswerCColorHSB[0];
+              CColorHSB[1] = AnswerCColorHSB[1];
+            }
+            if(ClickD == true || CorrectD.equals("True")){
+              DColorHSB[0] = AnswerDColorHSB[0];
+              DColorHSB[1] = AnswerDColorHSB[1];
+            }
+          } else {
+            if(ClickA == true){
+              AColorHSB[0] = AnswerAColorHSB[0];
+              AColorHSB[1] = AnswerAColorHSB[1];
+            }
+            if(ClickB == true){
+              BColorHSB[0] = AnswerBColorHSB[0];
+              BColorHSB[1] = AnswerBColorHSB[1];
+            }
+            if(ClickC == true){
+              CColorHSB[0] = AnswerCColorHSB[0];
+              CColorHSB[1] = AnswerCColorHSB[1];
+            }
+            if(ClickD == true){
+              DColorHSB[0] = AnswerDColorHSB[0];
+              DColorHSB[1] = AnswerDColorHSB[1];
+            }
+          };
         } else {
           if(ClickA == true){
             AColorHSB[1] = 0;

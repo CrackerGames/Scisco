@@ -193,29 +193,34 @@
       SettingsYSize = width * 0.025;
     //Settings Box
       SettingsBoxX = width * 0.6;
-      SettingsBoxY = height * 0.65;
+      SettingsBoxY = height * 0.60;
       SettingsBoxXSize = width * 0.3;
-      SettingsBoxYSize = height * 0.23;
+      SettingsBoxYSize = height * 0.28;
     //Settings Score
       SettingsScoreX = width * 0.65;
-      SettingsScoreY = height * 0.67;
+      SettingsScoreY = height * 0.62;
       SettingsScoreXSize = width * 0.2;
       SettingsScoreYSize = height * 0.04;
     //Settings Difficulty
       SettingsDifficultyX = width * 0.65;
-      SettingsDifficultyY = height * 0.72;
+      SettingsDifficultyY = height * 0.67;
       SettingsDifficultyXSize = width * 0.2;
       SettingsDifficultyYSize = height * 0.04;
     //Settings Combo
       SettingsComboX = width * 0.65;
-      SettingsComboY = height * 0.77;
+      SettingsComboY = height * 0.72;
       SettingsComboXSize = width * 0.2;
       SettingsComboYSize = height * 0.04;
     //Settings ShowCorrect
       SettingsShowCorrectX = width * 0.65;
-      SettingsShowCorrectY = height * 0.82;
+      SettingsShowCorrectY = height * 0.77;
       SettingsShowCorrectXSize = width * 0.2;
       SettingsShowCorrectYSize = height * 0.04;
+    //Settings ShowCorrectAnswers
+      SettingsShowCorrectAnswersX = width * 0.65;
+      SettingsShowCorrectAnswersY = height * 0.82;
+      SettingsShowCorrectAnswersXSize = width * 0.2;
+      SettingsShowCorrectAnswersYSize = height * 0.04;
     
     StrokeWeight = width / 400;
   } //End of void
@@ -435,6 +440,11 @@
     float SettingsShowCorrectY;
     float SettingsShowCorrectXSize;
     float SettingsShowCorrectYSize;
+  //Settings ShowCorrectAnswers
+    float SettingsShowCorrectAnswersX;
+    float SettingsShowCorrectAnswersY;
+    float SettingsShowCorrectAnswersXSize;
+    float SettingsShowCorrectAnswersYSize;
 
 
 //QuizData
@@ -530,6 +540,7 @@
   boolean ScoreActive = true;
   boolean DifficultyActive = true;
   boolean ComboActive = true;
+  boolean ShowCorrectAnswers = true;
 
 
 //XML

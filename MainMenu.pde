@@ -59,6 +59,12 @@ void MainMenu(){
       fill(0, 100, 67); //farve 7
     }
     rect(SettingsShowCorrectX, SettingsShowCorrectY, SettingsShowCorrectXSize, SettingsShowCorrectYSize, 10);
+    if (ShowCorrectAnswers == true){
+      fill(100, 100, 50); //farve 8
+    } else {
+      fill(0, 100, 67); //farve 7
+    }
+    rect(SettingsShowCorrectAnswersX, SettingsShowCorrectAnswersY, SettingsShowCorrectAnswersXSize, SettingsShowCorrectAnswersYSize, 10);
 
     fill(0);
     textSize(width / 80);
@@ -66,6 +72,7 @@ void MainMenu(){
     text("Use difficulty in score", SettingsDifficultyX, SettingsDifficultyY - height * 0.003, SettingsDifficultyXSize, SettingsDifficultyYSize);
     text("Use combo in score", SettingsComboX, SettingsComboY - height * 0.003, SettingsComboXSize, SettingsComboYSize);
     text("Show if you're correct", SettingsShowCorrectX, SettingsShowCorrectY - height * 0.003, SettingsShowCorrectXSize, SettingsShowCorrectYSize);
+    text("Show correct answers", SettingsShowCorrectAnswersX, SettingsShowCorrectAnswersY - height * 0.003, SettingsShowCorrectAnswersXSize, SettingsShowCorrectAnswersYSize);
   }
 }
 

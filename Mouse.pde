@@ -44,6 +44,7 @@ void mousePressed(){
         XML DifficultyActiveData = SettingsData.getChild("DifficultyActive");
         XML ComboActiveData = SettingsData.getChild("ComboActive");
         XML ShowCorrectActiveData = SettingsData.getChild("ShowCorrectActive");
+        XML ShowCorrectAnswersData = SettingsData.getChild("ShowCorrectAnswers");
         if (mouseX >= SettingsScoreX && mouseY >= SettingsScoreY && mouseX <= SettingsScoreX + SettingsScoreXSize && mouseY <= SettingsScoreY + SettingsScoreYSize){
           if (ScoreActive == true){
             ScoreActive = false;
@@ -82,6 +83,15 @@ void mousePressed(){
           } else {
             ShowCorrectActive = true;
             ShowCorrectActiveData.setContent("True");
+          }
+        }
+        if (mouseX >= SettingsShowCorrectAnswersX && mouseY >= SettingsShowCorrectAnswersY && mouseX <= SettingsShowCorrectAnswersX + SettingsShowCorrectAnswersXSize && mouseY <= SettingsShowCorrectAnswersY + SettingsShowCorrectAnswersYSize){
+          if (ShowCorrectAnswers == true){
+            ShowCorrectAnswers = false;
+            ShowCorrectAnswersData.setContent("False");
+          } else {
+            ShowCorrectAnswers = true;
+            ShowCorrectAnswersData.setContent("True");
           }
         }
         saveXML(Data, sketchPath("Data/Data.xml"));
@@ -352,11 +362,6 @@ void mousePressed(){
     } else {
       WriteHColor = false;
     } //HColor
-    
-    if (mouseX >= HColorSelectX && mouseY >=  HColorSelectY && mouseX <= HColorSelectX + HColorSelectXSize && mouseY <=  HColorSelectY + HColorSelectYSize){
-      HColorEx = int(mouseY - HColorSelectY);
-      NewQuizHColorString = str(HColorEx);
-    } //HColorSelect
     
     if (mouseX >= SColorX && mouseY >=  SColorY && mouseX <= SColorX + SColorXSize && mouseY <=  SColorY + SColorYSize){
       WriteSColor = true;

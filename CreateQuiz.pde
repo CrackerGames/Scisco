@@ -36,6 +36,14 @@ void NewQuiz(){
   if (WriteSColor == true){
     fill(219,35,15); //farve 3
   }
+  
+  if (mouseX >= HColorSelectX && mouseY >=  HColorSelectY && mouseX <= HColorSelectX + HColorSelectXSize && mouseY <=  HColorSelectY + HColorSelectYSize){
+    if(mousePressed == true){
+      HColorEx = int(mouseY - HColorSelectY);
+      NewQuizHColorString = str(HColorEx);
+    }
+  } //HColorSelect
+  
   rect(SColorX, SColorY, SColorXSize, SColorYSize, 10);
   fill(221,61,6);
   if (WriteBColor == true){
