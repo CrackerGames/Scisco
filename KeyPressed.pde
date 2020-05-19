@@ -328,7 +328,7 @@ void keyPressed(){
     }
     if (key == TAB && tab == 0){
       WriteBColor = false;
-      if (!Screen.equals("AddedQuiz")){
+      if (!Screen.equals("AddedQuiz") && !Screen.equals("EditQuizName")){
         WriteNewQuizName = true;
       } else {
         WriteFirstLine = true;
